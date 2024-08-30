@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
 
+// Conteneur principal de la barre de navigation
 const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -13,17 +14,18 @@ const NavbarContainer = styled.div`
   height: 100px;
 `;
 
+// Conteneur pour le logo
 const Logo = styled.div`
-  img {
-    height: 60px; /* Ajustez la hauteur du logo selon vos besoins */
-  }
+  /* Pas de styles CSS directs appliqués à l'image */
 `;
 
+// Conteneur des éléments de navigation
 const NavItems = styled.div`
   display: flex;
   gap: 7vw;
 `;
 
+// Style des éléments de navigation
 const NavItem = styled(Link)`
   text-decoration: none;
   color: white;
@@ -33,6 +35,7 @@ const NavItem = styled(Link)`
   }
 `;
 
+// Style du bouton de devis
 const QuoteButton = styled.button`
   background-color: #007bff;
   color: white;
@@ -52,10 +55,11 @@ export default function NavBar() {
             <Logo>
                 <Image 
                     src="/mk.png"
-                    alt="Logo" 
-                    width={100}
-                    height={100}
+                    alt="Logo"
+                    width={80}
+                    height={80}
                     quality={100}
+                    priority
                 />
             </Logo>
             <NavItems>
