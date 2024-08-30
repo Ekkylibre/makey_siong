@@ -4,14 +4,16 @@ import styled from 'styled-components';
 
 const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #f8f9fa;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #0e232d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  height: 100px;
 `;
 
 const Logo = styled.div`
+  color: white;
   font-size: 1.5rem;
   font-weight: bold;
 `;
@@ -23,10 +25,10 @@ const NavItems = styled.div`
 
 const NavItem = styled(Link)`
   text-decoration: none;
-  color: #333;
+  color: white;
   font-size: 1rem;
   &:hover {
-    color: #007bff;
+    color: #0056b3;
   }
 `;
 
