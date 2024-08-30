@@ -1,12 +1,13 @@
 "use client";
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
 
 // Conteneur principal de la barre de navigation
-const NavbarContainer = styled.div`
+const NavbarContainer = styled.div<{ hidden: boolean }>`
   position: fixed;
-  top: 0;
+  top: ${props => (props.hidden ? '-100px' : '0')}; /* Ajuste la position en fonction de la visibilité */
   left: 0;
   width: 100%;
   display: flex;
@@ -17,6 +18,7 @@ const NavbarContainer = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   height: 100px;
   z-index: 1000;
+  transition: top 0.3s ease; /* Transition fluide pour le déplacement */
 `;
 
 // Conteneur pour le logo
@@ -57,13 +59,34 @@ const QuoteButton = styled.button`
 // Conteneur principal du contenu
 const MainContent = styled.div`
   padding-top: 100px; /* Assure que le contenu commence sous la navbar */
-  /* Autres styles pour ton contenu principal */
+  background-color: #0e232d;
 `;
 
 export default function Page() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [navbarHidden, setNavbarHidden] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.scrollY;
+      if (currentPosition > scrollPosition && currentPosition > 100) {
+        setNavbarHidden(true); // Masquer la navbar si on défile vers le bas
+      } else {
+        setNavbarHidden(false); // Afficher la navbar si on défile vers le haut
+      }
+      setScrollPosition(currentPosition);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollPosition]);
+
   return (
     <>
-      <NavbarContainer>
+      <NavbarContainer hidden={navbarHidden}>
         <Logo>
           <Image 
             src="/mk.png"
