@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const NavbarContainer = styled.div`
@@ -20,7 +21,7 @@ const NavItems = styled.div`
   gap: 7rem;
 `;
 
-const NavItem = styled.a`
+const NavItem = styled(Link)`
   text-decoration: none;
   color: #333;
   font-size: 1rem;
@@ -43,15 +44,15 @@ const QuoteButton = styled.button`
 `;
 
 export default function NavBar() {
-  return (
-    <NavbarContainer>
-      <Logo>Logo</Logo>
-      <NavItems>
-        <NavItem href="/">HOME</NavItem>
-        <NavItem href="portfolio">PORTEFOLIO</NavItem>
-        <NavItem href="contact">CONTACT</NavItem>
-      </NavItems>
-      <QuoteButton>Devis Gratuit</QuoteButton>
-    </NavbarContainer>
-  );
+    return (
+        <NavbarContainer>
+            <Logo>Logo</Logo>
+            <NavItems>
+                <NavItem href="/">HOME</NavItem>
+                <NavItem href="/portfolio">PORTFOLIO</NavItem>
+                <NavItem href="/contact">CONTACT</NavItem>
+            </NavItems>
+            <QuoteButton>Devis Gratuit</QuoteButton>
+        </NavbarContainer>
+    );
 }
