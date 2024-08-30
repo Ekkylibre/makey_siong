@@ -1,4 +1,6 @@
-import NavBar from "./components/NavBar"
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
+import GlobalStyle from "./GlobalStyle";
 
 export const metadata = {
   title: 'Next.js',
@@ -13,9 +15,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <GlobalStyle />
         <header><NavBar /></header>
         <main>{children}</main>
-        <footer>FOOTER</footer></body>
+        <footer><Footer /></footer>
+      </body>
     </html>
-  )
+  );
 }
