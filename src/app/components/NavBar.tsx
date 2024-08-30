@@ -50,24 +50,25 @@ const QuoteButton = styled.button`
 `;
 
 export default function NavBar() {
-    return (
-        <NavbarContainer>
-            <Logo>
-                <Image 
-                    src="/mk.png"
-                    alt="Logo"
-                    width={80}
-                    height={80}
-                    quality={100}
-                    priority
-                />
-            </Logo>
-            <NavItems>
-                <NavItem href="/">HOME</NavItem>
-                <NavItem href="/portfolio">PORTFOLIO</NavItem>
-                <NavItem href="/contact">CONTACT</NavItem>
-            </NavItems>
-            <QuoteButton>Devis Gratuit</QuoteButton>
-        </NavbarContainer>
-    );
+  return (
+    <NavbarContainer>
+      <Logo>
+        <Image 
+          src="/mk.png"
+          alt="Logo"
+          width={80}
+          height={80}
+          quality={100}
+          priority
+        />
+      </Logo>
+      <NavItems>
+        <NavItem href="/">HOME</NavItem>
+        <NavItem href="/#services">SERVICES</NavItem>
+        <NavItem href="/portfolio">PORTFOLIO</NavItem>
+        <NavItem href="/contact">CONTACT</NavItem>
+      </NavItems>
+      <QuoteButton>Devis Gratuit</QuoteButton>
+    </NavbarContainer>
+  );
 }

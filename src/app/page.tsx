@@ -32,16 +32,33 @@ const StyledBackground = styled.div`
   }
 `;
 
+const ServicesSection = styled.section`
+  padding: 2em;
+  text-align: center;
+  background-color: #f4f4f4;
+  color: #333;
+
+  h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+`;
+
 export default function Home() {
-    return (
-        <StyledBackground>
-            <div>
-                <h1>MAKEY SIONG</h1>
-                <h2>FILMMAKER</h2>
-            </div>
-            <video autoPlay loop>
-                <source src="/car.mp4" type="video/mp4" />
-            </video>
-        </StyledBackground>
-    );
+  return (
+    <>
+      <StyledBackground>
+        <div>
+          <h1>MAKEY SIONG</h1>
+          <h2>FILMMAKER</h2>
+        </div>
+        <video autoPlay loop>
+          <source src="/car.mp4" type="video/mp4" />
+        </video>
+      </StyledBackground>
+      <ServicesSection id="services">
+        <h1>Services</h1>
+      </ServicesSection>
+    </>
+  );
 }

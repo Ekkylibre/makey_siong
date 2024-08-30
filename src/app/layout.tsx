@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link
+        <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         />
@@ -23,7 +23,9 @@ export default function RootLayout({
       <body>
         <GlobalStyle />
         <header><NavBar /></header>
-        <main>{children}</main>
+        <main>
+          {children}
+        </main>
         <footer><Footer /></footer>
       </body>
     </html>
