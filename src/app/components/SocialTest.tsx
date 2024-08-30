@@ -72,23 +72,28 @@ export default function SocialTest() {
         <SocialContainer>
           <SocialList>
             <SocialItem>
-              <Link href="https://www.facebook.com/martydevelopment/" target="_blank">
+              <Link href="https://www.facebook.com/people/Makey-Siong/pfbid018xF4ucqvhnGF1gVaZuoczCL6yGEsmLo6i1AzyVyEWYXcmvZQmmeQ8Gs7Fb48XWQl/?locale=fr_FR" target="_blank">
                 <i className="fab fa-facebook" tabIndex={0}></i>
               </Link>
             </SocialItem>
             <SocialItem>
-              <Link href="https://www.linkedin.com/in/martydevelopment" target="_blank">
+              <Link href="https://www.linkedin.com/in/makey-siong-071924287" target="_blank">
                 <i className="fab fa-linkedin" tabIndex={0}></i>
               </Link>
             </SocialItem>
             <SocialItem>
-              <Link href="https://www.instagram.com/marty.development/" target="_blank">
+              <Link href="https://www.instagram.com/mksg0411/" target="_blank">
                 <i className="fab fa-instagram" tabIndex={0}></i>
               </Link>
             </SocialItem>
             <SocialItem>
-              <Link href="#" target="_blank">
+              <Link href="https://www.youtube.com/@makeysiong" target="_blank">
                 <i className="fab fa-youtube" tabIndex={0}></i>
+              </Link>
+            </SocialItem>
+            <SocialItem>
+              <Link href="https://www.tiktok.com/@makey_sg04" target="_blank">
+                <i className="fab fa-tiktok" tabIndex={0}></i>
               </Link>
             </SocialItem>
           </SocialList>
