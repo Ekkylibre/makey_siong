@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 const NavbarContainer = styled.div`
@@ -13,9 +14,9 @@ const NavbarContainer = styled.div`
 `;
 
 const Logo = styled.div`
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
+  img {
+    height: 60px; /* Ajustez la hauteur du logo selon vos besoins */
+  }
 `;
 
 const NavItems = styled.div`
@@ -48,7 +49,15 @@ const QuoteButton = styled.button`
 export default function NavBar() {
     return (
         <NavbarContainer>
-            <Logo>Logo</Logo>
+            <Logo>
+                <Image 
+                    src="/mk.png"
+                    alt="Logo" 
+                    width={100}
+                    height={100}
+                    quality={100}
+                />
+            </Logo>
             <NavItems>
                 <NavItem href="/">HOME</NavItem>
                 <NavItem href="/portfolio">PORTFOLIO</NavItem>
