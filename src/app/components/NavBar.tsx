@@ -21,7 +21,7 @@ const Logo = styled.div`
 
 const NavItems = styled.div`
   display: flex;
-  gap: 7rem;
+  gap: 7vw;
 `;
 
 const NavItem = styled(Link)`
