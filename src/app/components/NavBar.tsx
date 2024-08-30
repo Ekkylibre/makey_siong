@@ -40,7 +40,7 @@ const QuoteButton = styled.button`
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 25px;
   &:hover {
     background-color: #0056b3;
   }
