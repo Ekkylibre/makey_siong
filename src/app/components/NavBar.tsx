@@ -44,17 +44,22 @@ const NavItem = styled(Link)`
 
 // Style du bouton de devis
 const QuoteButton = styled.button`
-  background-color: #007bff;
-  color: white;
-  border: none;
+  background-color: #0e232d; /* Couleur de fond initiale */
+  color: white; /* Couleur du texte */
+  border: 2px solid #007bff; /* Bordure bleue */
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 25px;
+  transition: filter 0.3s, color 0.3s; /* Transition pour l'effet de luminosité */
+  
+  /* Applique un léger effet de luminosité */
   &:hover {
-    background-color: #0056b3;
+    filter: brightness(1.3); /* Augmente la luminosité de 30% au survol */
+    color: #007bff; /* Change la couleur du texte au survol */
   }
 `;
+
 
 // Conteneur principal du contenu
 const MainContent = styled.div`
