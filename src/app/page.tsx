@@ -1,7 +1,7 @@
 "use client";
 import styled from 'styled-components';
+import Card from './components/Card';
 
-// Définissez le composant StyledBackground avec les styles pour la vidéo en fond
 const StyledBackground = styled.div`
   position: relative;
   width: 100%;
@@ -34,13 +34,25 @@ const StyledBackground = styled.div`
 
 const ServicesSection = styled.section`
   padding: 2em;
-  text-align: center;
   background-color: #f4f4f4;
-  color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column; // Affiche les éléments en colonne
+  align-items: center; // Centre les éléments horizontalement
+  gap: 2em; // Espacement entre les cartes
+  background-color: #081319;
 
   h1 {
     margin: 0;
     font-size: 2em;
+  }
+
+  // Style pour contenir les cartes dans une rangée
+  .cards-container {
+    display: flex;
+    justify-content: center; // Centre les cartes horizontalement
+    flex-wrap: wrap; // Permet aux cartes de se déplacer à la ligne suivante si nécessaire
+    gap: 2em; // Espacement entre les cartes
   }
 `;
 
@@ -58,6 +70,23 @@ export default function Home() {
       </StyledBackground>
       <ServicesSection id="services">
         <h1>Services</h1>
+        <div className="cards-container">
+          <Card
+            imageSrc="/moto.jpg"
+            title="Auto-Moto"
+            description="Captation dynamique des véhicules pour des vidéos aussi rapides que fluides."
+          />
+          <Card
+            imageSrc="/corporate.jpg"
+            title="Corporate"
+            description="Création de vidéos corporate professionnelles pour valoriser votre marque."
+          />
+          <Card
+            imageSrc="/social_media.jpg"
+            title="Réseaux Sociaux"
+            description="Vidéos percutantes pour optimiser votre présence et engagement sur les réseaux sociaux."
+          />
+        </div>
       </ServicesSection>
     </>
   );
