@@ -22,8 +22,9 @@ const NavbarContainer = styled.div<{ hidden: boolean }>`
 `;
 
 // Conteneur pour le logo
-const Logo = styled.div`
-  /* Pas de styles CSS directs appliqués à l'image */
+const Logo = styled(Link)`
+  display: flex;
+  align-items: center;
 `;
 
 // Conteneur des éléments de navigation
@@ -93,7 +94,7 @@ export default function Page() {
   return (
     <>
       <NavbarContainer hidden={navbarHidden}>
-        <Logo>
+        <Logo href="/">
           <Image
             src="/mk.png"
             alt="Logo"
