@@ -30,6 +30,7 @@ const Logo = styled.div`
 const NavItems = styled.div`
   display: flex;
   gap: 7vw;
+  align-items: center;
 `;
 
 // Style des éléments de navigation
@@ -42,14 +43,16 @@ const NavItem = styled(Link)`
   }
 `;
 
-// Style du bouton de devis
-const QuoteButton = styled.button`
+// Style du lien de devis
+const QuoteLink = styled(NavItem)`
   background-color: #0e232d; /* Couleur de fond initiale */
   color: white; /* Couleur du texte */
-  border: 1px solid white; /* Bordure bleue */
+  border: 1px solid white; /* Bordure blanche */
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: filter 0.3s, color 0.3s; /* Transition pour l'effet de luminosité */
   
   /* Applique un léger effet de luminosité */
@@ -58,7 +61,6 @@ const QuoteButton = styled.button`
     color: #007bff; /* Change la couleur du texte au survol */
   }
 `;
-
 
 // Conteneur principal du contenu
 const MainContent = styled.div`
@@ -92,7 +94,7 @@ export default function Page() {
     <>
       <NavbarContainer hidden={navbarHidden}>
         <Logo>
-          <Image 
+          <Image
             src="/mk.png"
             alt="Logo"
             width={80}
@@ -107,7 +109,7 @@ export default function Page() {
           <NavItem href="/portfolio">PORTFOLIO</NavItem>
           <NavItem href="/contact">CONTACT</NavItem>
         </NavItems>
-        <QuoteButton>Devis Gratuit</QuoteButton>
+        <QuoteLink href="/contact/#contact-moi">Devis Gratuit</QuoteLink>
       </NavbarContainer>
       <MainContent>
       </MainContent>
