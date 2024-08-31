@@ -46,11 +46,10 @@ const NavItem = styled(Link)`
 const QuoteButton = styled.button`
   background-color: #0e232d; /* Couleur de fond initiale */
   color: white; /* Couleur du texte */
-  border: 2px solid #007bff; /* Bordure bleue */
+  border: 1px solid white; /* Bordure bleue */
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 25px;
   transition: filter 0.3s, color 0.3s; /* Transition pour l'effet de luminosité */
   
   /* Applique un léger effet de luminosité */
