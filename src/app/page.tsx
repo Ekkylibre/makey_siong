@@ -50,7 +50,7 @@ export default function Home() {
       <StyledBackground>
         <div>
           <h1>MAKEY SIONG</h1>
-          <h2>FILMMAKER</h2>
+          <h2>RÉALISATEUR</h2>
         </div>
         <video autoPlay loop>
           <source src="/car.mp4" type="video/mp4" />
