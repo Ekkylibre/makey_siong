@@ -11,7 +11,6 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     height: 100%;
     scroll-behavior: smooth;
-    background-color: #081319;
   }
 
   body {
