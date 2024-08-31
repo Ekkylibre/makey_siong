@@ -34,8 +34,8 @@ const SocialItem = styled.li`
   cursor: pointer;
   transition: ease 0.3s;
   font-size: 1.5rem;
-  margin-left: 10px;
-  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
   opacity: 0.7; /* Assure que toutes les icônes ont une opacité normale par défaut */
   
   a {
@@ -59,7 +59,8 @@ const SocialItem = styled.li`
 `;
 
 const SocialContainer = styled.div`
-  /* Réduit l'opacité des icônes non survolées lorsque le conteneur est survolé */
+  display: inline-block; /* Limite la portée du hover à ce conteneur spécifique */
+  
   &:hover ${SocialItem}:not(:hover) {
     opacity: 0.3; 
   }
