@@ -94,12 +94,14 @@ const TextContent = styled.div`
 
 const FormSection = styled.section`
   color: white;
+  background-color: #081319; /* Ajout de la couleur de fond */
+  padding-bottom: 20px;
 `;
 
 const CenteredH2 = styled.h2`
   text-align: center;
   color: white;
-  margin: 20px 0;
+  padding: 20px 0;
 `;
 
 export default function Contact() {
@@ -119,9 +121,9 @@ export default function Contact() {
                     </p>
                 </TextContent>
             </BackgroundContainer>
-            <CenteredH2 id="contact-moi">CONTACT-MOI</CenteredH2>
-            <FormSection>
-                <ContactForm />
+            <FormSection id="contact-moi">
+              <CenteredH2>CONTACT-MOI</CenteredH2>
+                  <ContactForm />
             </FormSection>
         </>
     );

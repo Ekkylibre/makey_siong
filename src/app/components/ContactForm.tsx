@@ -8,7 +8,6 @@ const FormContainer = styled.div`
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   background-color: #0e232d;
-  margin-bottom: 20px;
 `;
 
 const FormField = styled.div`
