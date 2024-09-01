@@ -8,8 +8,8 @@ const fadeMoveDown = keyframes`
   100% { transform: translate(0, 20px) rotate(45deg); opacity: 0; }
 `;
 
-// Création du composant stylé
-const ScrollDownDiv = styled.div`
+// Création du composant stylé pour le lien
+const ScrollDownLink = styled.a`
   position: absolute;
   left: 50%;
   bottom: 50px; /* Ajuster l'espace en bas pour correspondre à la taille agrandie */
@@ -23,10 +23,17 @@ const ScrollDownDiv = styled.div`
   border-right: 2px solid #fff; /* Augmenter l'épaisseur de la bordure */
   transform: translate(-50%, 0%) rotate(45deg);
   animation: ${fadeMoveDown} 2s ease infinite;
+  cursor: pointer; /* Ajouter un curseur pointer pour indiquer qu'il est cliquable */
 `;
 
-export default function ScrollDown() {
-  return (
-    <ScrollDownDiv />
-  );
+interface ScrollDownProps {
+  targetId: string;
 }
+
+const ScrollDown: React.FC<ScrollDownProps> = ({ targetId }) => {
+  return (
+    <ScrollDownLink href={`#${targetId}`} aria-label={`Scroll Down to ${targetId}`} />
+  );
+};
+
+export default ScrollDown;
