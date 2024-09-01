@@ -37,11 +37,28 @@ const NavItems = styled.div`
 
 // Style des éléments de navigation
 const NavItem = styled(Link)`
-  text-decoration: none;
+  text-decoration: none; /* Pas de soulignement par défaut */
   color: white;
   font-size: 1rem;
+  position: relative; /* Nécessaire pour le positionnement de la pseudo-élément */
   &:hover {
-    color: #0056b3;
+    text-shadow: 0 0 2px white; 
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Ajustez la position du soulignement */
+    left: 0;
+    width: 100%;
+    height: 1px; /* Épaisseur du soulignement */
+    background-color: white; /* Couleur du soulignement */
+    transform: scaleX(0); /* Initialement invisible */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+  &:hover:before {
+    transform: scaleX(1); /* Affiche le soulignement au survol */
+    transform-origin: bottom left;
   }
 `;
 
