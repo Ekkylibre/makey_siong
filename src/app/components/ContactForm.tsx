@@ -80,12 +80,14 @@ const ConsentField = styled.div`
 const Checkbox = styled.input`
   margin-top: 5px; /* Aligne verticalement la case à cocher avec la première ligne du texte */
   margin-right: 10px; /* Espace entre la case à cocher et le texte */
+  cursor: pointer;
 `;
 
 const ConsentLabel = styled.label`
   display: inline-block; /* Assure que le texte est traité comme un bloc en ligne */
   font-weight: normal; /* Style du texte du label */
   line-height: 1.5; /* Hauteur de ligne pour le texte multi-lignes */
+  cursor: pointer;
 `;
 
 const ConsentLink = styled.a`
