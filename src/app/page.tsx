@@ -75,16 +75,19 @@ export default function Home() {
             imageSrc="/moto.jpg"
             title="Auto-Moto"
             description="Captation dynamique des véhicules pour des vidéos aussi rapides que fluides."
+            url=""
           />
           <Card
             imageSrc="/corporate.jpg"
             title="Corporate"
             description="Création de vidéos corporate professionnelles pour valoriser votre marque."
+            url=""
           />
           <Card
             imageSrc="/social_media.jpg"
             title="Réseaux Sociaux"
             description="Vidéos impactantes pour booster votre présence et engagement sur les réseaux sociaux."
+            url=""
           />
         </div>
       </ServicesSection>
