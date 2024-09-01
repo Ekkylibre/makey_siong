@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import Card from './components/Card';
 
+// Style pour le fond et la vidéo
 const StyledBackground = styled.div`
   position: relative;
   width: 100%;
@@ -30,8 +31,17 @@ const StyledBackground = styled.div`
   h2 {
     margin-top: 0.5em; // Espacement entre le h1 et le h2
   }
+
+  p {
+    font-family: 'Bebas Neue', sans-serif; // Application de la police Bebas Neue
+    font-size: 1.5em; // Taille de police ajustée selon votre design
+    color: white; // Assurez-vous que le texte est bien visible sur la vidéo
+    z-index: 1; // Assurez-vous que le texte est au-dessus de la vidéo
+    margin-top: 0.5em; // Espacement par rapport au titre (h1)
+  }
 `;
 
+// Style pour la section des services
 const ServicesSection = styled.section`
   padding: 2em;
   background-color: #f4f4f4;
@@ -62,7 +72,7 @@ export default function Home() {
       <StyledBackground>
         <div>
           <h1>MAKEY SIONG</h1>
-          <h2>RÉALISATEUR</h2>
+          <p>RÉALISATEUR</p>
         </div>
         <video autoPlay loop>
           <source src="/car.mp4" type="video/mp4" />
