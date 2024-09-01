@@ -1,8 +1,8 @@
 "use client";
 import styled, { keyframes } from 'styled-components';
 import ContactForm from '../components/ContactForm';
+import Link from 'next/link';
 
-// Animation pour révéler le texte du bas vers le haut
 const reveal = keyframes`
   0% {
     clip-path: inset(100% 0 0 0);
@@ -12,7 +12,6 @@ const reveal = keyframes`
   }
 `;
 
-// Animation pour faire apparaître le texte du bas vers le haut
 const slideUp = keyframes`
   0% {
     opacity: 0;
@@ -56,10 +55,10 @@ const TextContent = styled.div`
   p {
     margin-bottom: 20px;
     opacity: 0;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1); /* Ombre pour p */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
     transform: translateY(20px);
     animation: ${slideUp} 1s ease-out forwards;
-    
+
     &:nth-of-type(1) {
       animation-delay: 0.3s;
     }
@@ -94,7 +93,7 @@ const TextContent = styled.div`
 
 const FormSection = styled.section`
   color: white;
-  background-color: #081319; /* Ajout de la couleur de fond */
+  background-color: #081319;
   padding-bottom: 20px;
 `;
 
@@ -105,26 +104,29 @@ const CenteredH2 = styled.h2`
 `;
 
 export default function Contact() {
-    return (
-        <>
-            <BackgroundContainer>
-                <TextContent>
-                    <h1>Makey Siong</h1>
-                    <p>
-                        En tant que filmmaker passionné, je m’efforce de capturer les émotions et les histoires à travers la lentille de ma caméra. Mon travail est une exploration constante de la créativité et de l’authenticité, où chaque projet devient une aventure unique.
-                    </p>
-                    <p>
-                        Mon approche est centrée sur la collaboration étroite avec mes clients pour comprendre leurs visions et transformer leurs idées en images captivantes. Que ce soit pour des courts-métrages, des documentaires ou des vidéos promotionnelles, je mets tout en œuvre pour livrer un produit final qui dépasse les attentes.
-                    </p>
-                    <p>
-                        Je suis toujours à la recherche de nouveaux défis et de projets intéressants. N’hésitez pas à me contacter pour discuter de la manière dont nous pouvons travailler ensemble pour créer quelque chose de mémorable.
-                    </p>
-                </TextContent>
-            </BackgroundContainer>
-            <FormSection id="contact-moi">
-              <CenteredH2>CONTACT-MOI</CenteredH2>
-                  <ContactForm />
-            </FormSection>
-        </>
-    );
+  return (
+    <>
+      <BackgroundContainer>
+        <TextContent>
+          <h1>Makey Siong</h1>
+          <p>
+            En tant que filmmaker passionné, je m’efforce de capturer les émotions et les histoires à travers la lentille de ma caméra. Mon travail est une exploration constante de la créativité et de l’authenticité, où chaque projet devient une aventure unique.
+          </p>
+          <p>
+            Mon approche est centrée sur la collaboration étroite avec mes clients pour comprendre leurs visions et transformer leurs idées en images captivantes. Que ce soit pour des courts-métrages, des documentaires ou des vidéos promotionnelles, je mets tout en œuvre pour livrer un produit final qui dépasse les attentes.
+          </p>
+          <p>
+            Je suis toujours à la recherche de nouveaux défis et de projets intéressants. N’hésitez pas à me contacter pour discuter de la manière dont nous pouvons travailler ensemble pour créer quelque chose de mémorable.
+          </p>
+          <Link href="https://www.youtube.com/watch?v=GbA9Eb1D6qU&t=157s" target="_blank" rel="noopener noreferrer">
+            En savoir plus sur moi
+          </Link>
+        </TextContent>
+      </BackgroundContainer>
+      <FormSection id="contact-moi">
+        <CenteredH2>CONTACT-MOI</CenteredH2>
+        <ContactForm />
+      </FormSection>
+    </>
+  );
 }
