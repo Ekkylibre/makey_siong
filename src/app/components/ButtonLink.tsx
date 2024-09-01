@@ -2,7 +2,7 @@
 import React from 'react';
 import NextLink from 'next/link';
 import styled from 'styled-components';
-import { colors } from './theme';
+import { colors } from '../../../theme';
 
 const StyledButtonLink = styled.a`
   background-color: ${colors.primary};

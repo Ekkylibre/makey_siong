@@ -1,7 +1,7 @@
 "use client";
 import styled from 'styled-components';
 import SocialTest from './SocialTest';
-import { colors } from './theme';
+import { colors } from '../../../theme';
 
 const FooterContainer = styled.footer`
   padding: 2rem;

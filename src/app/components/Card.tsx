@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ButtonLink from './ButtonLink';
-import { colors } from './theme';
+import { colors } from '../../../theme';
 
 // Style pour la carte avec effet de zoom au survol
 const CardContainer = styled.div`
