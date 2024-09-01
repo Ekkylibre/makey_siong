@@ -3,11 +3,12 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { colors } from './theme';
 
 // Conteneur principal de la barre de navigation
 const NavbarContainer = styled.div.withConfig({
   shouldForwardProp: (prop) => !['hidden', 'transparent'].includes(prop),
-})<{ hidden: boolean; transparent: boolean }>`
+}) <{ hidden: boolean; transparent: boolean }>`
   position: fixed;
   top: ${props => (props.hidden ? '-100px' : '0')}; /* Ajuste la position en fonction de la visibilité */
   left: 0;
@@ -16,7 +17,7 @@ const NavbarContainer = styled.div.withConfig({
   justify-content: space-around;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: ${props => (props.transparent ? 'transparent' : '#0e232d')};
+  background-color: ${props => (props.transparent ? 'transparent' : colors.primary)};
   box-shadow: ${props => (props.transparent ? 'none' : '0 2px 4px rgba(0, 0, 0, 0.5)')};
   height: 100px;
   z-index: 1000;
@@ -66,7 +67,7 @@ const NavItem = styled(Link)`
 // Conteneur principal du contenu
 const MainContent = styled.div`
   /* padding-top: 100px; Assure que le contenu commence sous la navbar */
-  background-color: #0e232d;
+  background-color: ${colors.primary};
 `;
 
 export default function Page() {
@@ -77,7 +78,7 @@ export default function Page() {
   useEffect(() => {
     const handleScroll = () => {
       const currentPosition = window.scrollY;
-      
+
       setNavbarHidden(currentPosition > scrollPosition && currentPosition > 100);
       setNavbarTransparent(currentPosition === 0);
 

@@ -1,10 +1,11 @@
 "use client";
 import styled from 'styled-components';
 import SocialTest from './SocialTest';
+import { colors } from './theme';
 
 const FooterContainer = styled.footer`
   padding: 2rem;
-  background-color: #0e232d; 
+  background-color: ${colors.primary}; 
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 `;

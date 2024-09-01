@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ButtonLink from './ButtonLink';
+import { colors } from './theme';
 
 // Style pour la carte avec effet de zoom au survol
 const CardContainer = styled.div`
@@ -10,7 +11,7 @@ const CardContainer = styled.div`
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #0e232d;
+  background-color: ${colors.primary};
   color: white;
   transition: transform 1s ease;
 

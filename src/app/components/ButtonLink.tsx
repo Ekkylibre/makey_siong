@@ -2,9 +2,10 @@
 import React from 'react';
 import NextLink from 'next/link';
 import styled from 'styled-components';
+import { colors } from './theme';
 
 const StyledButtonLink = styled.a`
-  background-color: #0e232d;
+  background-color: ${colors.primary};
   color: white;
   border: 1px solid white;
   padding: 0.5rem 1rem;
