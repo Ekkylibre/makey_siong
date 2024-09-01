@@ -2,6 +2,7 @@
 import styled, { keyframes } from 'styled-components';
 import ContactForm from '../components/ContactForm';
 import Link from 'next/link';
+import ScrollDown from '../components/ScrollDown';
 
 const reveal = keyframes`
   0% {
@@ -134,6 +135,7 @@ export default function Contact() {
           <StyledLink href="https://www.youtube.com/watch?v=GbA9Eb1D6qU&t=157s" target="_blank" rel="noopener noreferrer">
             En savoir plus sur moi
           </StyledLink>
+          <ScrollDown />
         </TextContent>
       </BackgroundContainer>
       <FormSection id="contact-moi">
