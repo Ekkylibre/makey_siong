@@ -5,7 +5,9 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 // Conteneur principal de la barre de navigation
-const NavbarContainer = styled.div<{ hidden: boolean }>`
+const NavbarContainer = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['hidden', 'transparent'].includes(prop),
+})<{ hidden: boolean; transparent: boolean }>`
   position: fixed;
   top: ${props => (props.hidden ? '-100px' : '0')}; /* Ajuste la position en fonction de la visibilité */
   left: 0;
@@ -14,11 +16,11 @@ const NavbarContainer = styled.div<{ hidden: boolean }>`
   justify-content: space-around;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #0e232d;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: ${props => (props.transparent ? 'transparent' : '#0e232d')};
+  box-shadow: ${props => (props.transparent ? 'none' : '0 2px 4px rgba(0, 0, 0, 0.5)')};
   height: 100px;
   z-index: 1000;
-  transition: top 0.3s ease; /* Transition fluide pour le déplacement */
+  transition: top 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Transition fluide pour le déplacement */
 `;
 
 // Conteneur pour le logo
@@ -41,7 +43,7 @@ const NavItem = styled(Link)`
   font-size: 1rem;
   position: relative; /* Nécessaire pour le positionnement de la pseudo-élément */
   &:hover {
-    text-shadow: 0 0 2px white; 
+    text-shadow: 0 0 2px white;
   }
   &:before {
     content: '';
@@ -63,22 +65,22 @@ const NavItem = styled(Link)`
 
 // Conteneur principal du contenu
 const MainContent = styled.div`
-  padding-top: 100px; /*Assure que le contenu commence sous la navbar*/
+  /* padding-top: 100px; Assure que le contenu commence sous la navbar */
   background-color: #0e232d;
 `;
 
 export default function Page() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [navbarHidden, setNavbarHidden] = useState(false);
+  const [navbarTransparent, setNavbarTransparent] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentPosition = window.scrollY;
-      if (currentPosition > scrollPosition && currentPosition > 100) {
-        setNavbarHidden(true); // Masquer la navbar si on défile vers le bas
-      } else {
-        setNavbarHidden(false); // Afficher la navbar si on défile vers le haut
-      }
+      
+      setNavbarHidden(currentPosition > scrollPosition && currentPosition > 100);
+      setNavbarTransparent(currentPosition === 0);
+
       setScrollPosition(currentPosition);
     };
 
@@ -91,7 +93,7 @@ export default function Page() {
 
   return (
     <>
-      <NavbarContainer hidden={navbarHidden}>
+      <NavbarContainer hidden={navbarHidden} transparent={navbarTransparent}>
         <Logo href="/">
           <Image
             src="/mk.png"
