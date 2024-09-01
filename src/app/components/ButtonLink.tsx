@@ -17,7 +17,7 @@ const StyledButtonLink = styled.a`
 
   &:hover {
     filter: brightness(1.3);
-    color: #007bff;
+    text-shadow: 0 0 1px white;
   }
 `;
 
