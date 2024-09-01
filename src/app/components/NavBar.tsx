@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
-import ButtonLink from './ButtonLink';
 
 // Conteneur principal de la barre de navigation
 const NavbarContainer = styled.div<{ hidden: boolean }>`
@@ -64,7 +63,7 @@ const NavItem = styled(Link)`
 
 // Conteneur principal du contenu
 const MainContent = styled.div`
-  /* padding-top: 100px; Assure que le contenu commence sous la navbar */
+  padding-top: 100px; /*Assure que le contenu commence sous la navbar*/
   background-color: #0e232d;
 `;
 
@@ -109,7 +108,6 @@ export default function Page() {
           <NavItem href="/portfolio">PORTFOLIO</NavItem>
           <NavItem href="/contact">CONTACT</NavItem>
         </NavItems>
-        <ButtonLink href="/contact/#contact-moi">Devis Gratuit</ButtonLink>
       </NavbarContainer>
       <MainContent>
       </MainContent>
