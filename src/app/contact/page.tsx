@@ -1,7 +1,7 @@
 "use client";
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import ContactForm from '../components/ContactForm';
-import Link from 'next/link';
 import ScrollDown from '../components/ScrollDown';
 
 const reveal = keyframes`
@@ -92,7 +92,7 @@ const TextContent = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   color: white;
   text-decoration: none;
   opacity: 0;
@@ -135,7 +135,7 @@ export default function Contact() {
           <StyledLink href="https://www.youtube.com/watch?v=GbA9Eb1D6qU&t=157s" target="_blank" rel="noopener noreferrer">
             En savoir plus sur moi
           </StyledLink>
-          <ScrollDown />
+          <ScrollDown targetId="contact-moi" />
         </TextContent>
       </BackgroundContainer>
       <FormSection id="contact-moi">
