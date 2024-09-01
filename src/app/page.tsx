@@ -1,7 +1,7 @@
 "use client";
 import styled from 'styled-components';
 import Card from './components/Card';
-import { colors } from '../../theme';
+import { colors, fonts } from '../../theme';
 
 // Style pour le fond et la vidéo
 const StyledBackground = styled.div`
@@ -34,7 +34,7 @@ const StyledBackground = styled.div`
   }
 
   p {
-    font-family: 'Bebas Neue', sans-serif; // Application de la police Bebas Neue
+    font-family: ${fonts.secondary}; // Application de la police Bebas Neue
     font-size: 1.5em; // Taille de police ajustée selon votre design
     color: white; // Assurez-vous que le texte est bien visible sur la vidéo
     z-index: 1; // Assurez-vous que le texte est au-dessus de la vidéo
