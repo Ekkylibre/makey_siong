@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
+import ButtonLink from './ButtonLink';
 
 // Conteneur principal de la barre de navigation
 const NavbarContainer = styled.div<{ hidden: boolean }>`
@@ -41,25 +42,6 @@ const NavItem = styled(Link)`
   font-size: 1rem;
   &:hover {
     color: #0056b3;
-  }
-`;
-
-// Style du lien de devis
-const QuoteLink = styled(NavItem)`
-  background-color: #0e232d; /* Couleur de fond initiale */
-  color: white; /* Couleur du texte */
-  border: 1px solid white; /* Bordure blanche */
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: filter 0.3s, color 0.3s; /* Transition pour l'effet de luminosité */
-  
-  /* Applique un léger effet de luminosité */
-  &:hover {
-    filter: brightness(1.3); /* Augmente la luminosité de 30% au survol */
-    color: #007bff; /* Change la couleur du texte au survol */
   }
 `;
 
@@ -110,7 +92,7 @@ export default function Page() {
           <NavItem href="/portfolio">PORTFOLIO</NavItem>
           <NavItem href="/contact">CONTACT</NavItem>
         </NavItems>
-        <QuoteLink href="/contact/#contact-moi">Devis Gratuit</QuoteLink>
+        <ButtonLink href="/contact/#contact-moi">Devis Gratuit</ButtonLink>
       </NavbarContainer>
       <MainContent>
       </MainContent>
