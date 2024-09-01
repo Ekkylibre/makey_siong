@@ -25,7 +25,7 @@ export default function RootLayout({
         />
         <link
           rel="icon"
-          href="/mk.png"
+          href="/mk_vision.png"
           type="image/png"
         />
       </head>

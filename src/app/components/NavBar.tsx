@@ -97,7 +97,7 @@ export default function Page() {
       <NavbarContainer hidden={navbarHidden} transparent={navbarTransparent}>
         <Logo href="/">
           <Image
-            src="/mk.png"
+            src="/mk_vision.png"
             alt="Logo"
             width={80}
             height={80}
