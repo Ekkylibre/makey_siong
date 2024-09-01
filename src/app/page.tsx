@@ -69,7 +69,7 @@ export default function Home() {
         </video>
       </StyledBackground>
       <ServicesSection id="services">
-        <h1>Services</h1>
+        <h2>SERVICES</h2>
         <div className="cards-container">
           <Card
             imageSrc="/moto.jpg"
@@ -84,7 +84,7 @@ export default function Home() {
           <Card
             imageSrc="/social_media.jpg"
             title="Réseaux Sociaux"
-            description="Vidéos percutantes pour optimiser votre présence et engagement sur les réseaux sociaux."
+            description="Vidéos impactantes pour booster votre présence et engagement sur les réseaux sociaux."
           />
         </div>
       </ServicesSection>
