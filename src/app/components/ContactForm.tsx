@@ -13,13 +13,7 @@ const FormContainer = styled.div`
 
 const FormField = styled.div`
   margin-bottom: 15px;
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
+
   input, textarea {
     width: 100%;
     padding: 10px;
@@ -59,7 +53,7 @@ const SubmitButtonWrapper = styled.div`
 const SubmitButton = styled.button`
   background-color: ${colors.primary}; /* Couleur de fond initiale */
   color: white; /* Couleur du texte */
-  border: 1px solid white; /* Bordure bleue */
+  border: 1px solid white; /* Bordure blanche */
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
@@ -132,22 +126,22 @@ function ContactForm() {
       <form onSubmit={handleSubmit}>
         <InputRow>
           <InputField>
-            <label htmlFor="firstName">Nom</label>
             <input
               type="text"
               id="firstName"
               name="firstName"
+              placeholder="NOM"
               value={formData.firstName}
               onChange={handleChange}
               required
             />
           </InputField>
           <InputField>
-            <label htmlFor="lastName">Prénom</label>
             <input
               type="text"
               id="lastName"
               name="lastName"
+              placeholder="PRÉNOM"
               value={formData.lastName}
               onChange={handleChange}
               required
@@ -155,21 +149,21 @@ function ContactForm() {
           </InputField>
         </InputRow>
         <FormField>
-          <label htmlFor="email">E-mail</label>
           <input
             type="email"
             id="email"
             name="email"
+            placeholder="E-MAIL"
             value={formData.email}
             onChange={handleChange}
             required
           />
         </FormField>
         <FormField>
-          <label htmlFor="message">Message</label>
           <textarea
             id="message"
             name="message"
+            placeholder="MESSAGE"
             value={formData.message}
             onChange={handleChange}
             required
