@@ -1,8 +1,9 @@
-// Link.tsx
+// ButtonLink.tsx
 import React from 'react';
+import NextLink from 'next/link';
 import styled from 'styled-components';
 
-const StyledLink = styled.a`
+const StyledButtonLink = styled.a`
   background-color: #0e232d;
   color: white;
   border: 1px solid white;
@@ -20,19 +21,30 @@ const StyledLink = styled.a`
   }
 `;
 
-type LinkProps = {
+type ButtonLinkProps = {
   href: string;
   children: React.ReactNode;
   target?: string;
   rel?: string;
 };
 
-const Link: React.FC<LinkProps> = ({ href, children, target = '_self', rel = 'noopener noreferrer' }) => {
+const ButtonLink: React.FC<ButtonLinkProps> = ({ href, children, target = '_self', rel = 'noopener noreferrer' }) => {
+  // Vérifiez si le lien est interne ou externe
+  const isInternalLink = href.startsWith('/');
+
+  if (isInternalLink) {
+    return (
+      <NextLink href={href} passHref>
+        <StyledButtonLink>{children}</StyledButtonLink>
+      </NextLink>
+    );
+  }
+
   return (
-    <StyledLink href={href} target={target} rel={rel}>
+    <StyledButtonLink href={href} target={target} rel={rel}>
       {children}
-    </StyledLink>
+    </StyledButtonLink>
   );
 };
 
-export default Link;
+export default ButtonLink;
