@@ -67,7 +67,7 @@ const SubmitButton = styled.button`
   /* Applique un léger effet de luminosité */
   &:hover {
     filter: brightness(1.3); /* Augmente la luminosité de 30% au survol */
-    color: #007bff; /* Change la couleur du texte au survol */
+    color: white; /* Change la couleur du texte au survol */
   }
 `;
 
