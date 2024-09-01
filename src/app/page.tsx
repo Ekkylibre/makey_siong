@@ -74,7 +74,7 @@ export default function Home() {
           <h1>MAKEY SIONG</h1>
           <p>RÉALISATEUR</p>
         </div>
-        <video autoPlay loop>
+        <video autoPlay loop muted>
           <source src="/demo76mo.mp4" type="video/mp4" />
         </video>
       </StyledBackground>
