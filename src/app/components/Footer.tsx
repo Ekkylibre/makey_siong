@@ -27,12 +27,33 @@ const Copyright = styled.p`
   color: white;
 `;
 
+const FooterLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+const FooterLink = styled.a`
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.875rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export default function Footer() {
     return (
         <FooterContainer>
           <SocialTest />
             <StyledHr />
             <FooterContent>
+                <FooterLinks>
+                    <FooterLink href="/politique-de-confidentialite">Politique de Confidentialité</FooterLink>
+                    <FooterLink href="/mentions-legales">Mentions Légales</FooterLink>
+                    <FooterLink href="/consentement-collecte-donnees">Consentement pour la Collecte de Données</FooterLink>
+                </FooterLinks>
                 <Copyright>© {new Date().getFullYear()} Dany XIONG. Tous droits réservés.</Copyright>
             </FooterContent>
         </FooterContainer>
