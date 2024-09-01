@@ -29,12 +29,12 @@ type ButtonLinkProps = {
 };
 
 const ButtonLink: React.FC<ButtonLinkProps> = ({ href, children, target = '_self', rel = 'noopener noreferrer' }) => {
-  // Vérifiez si le lien est interne ou externe
+  // Vérifie si le lien est interne ou externe
   const isInternalLink = href.startsWith('/');
 
   if (isInternalLink) {
     return (
-      <NextLink href={href} passHref>
+      <NextLink href={href} passHref legacyBehavior>
         <StyledButtonLink>{children}</StyledButtonLink>
       </NextLink>
     );
