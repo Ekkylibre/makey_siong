@@ -126,7 +126,7 @@ export default function Contact() {
             En tant que filmmaker passionné, je m’efforce de capturer les émotions et les histoires à travers la lentille de ma caméra. Mon travail est une exploration constante de la créativité et de l’authenticité, où chaque projet devient une aventure unique.
           </p>
           <p>
-            Mon approche est centrée sur la collaboration étroite avec mes clients pour comprendre leurs visions et transformer leurs idées en images captivantes. Que ce soit pour des courts-métrages, des documentaires ou des vidéos promotionnelles, je mets tout en œuvre pour livrer un produit final qui dépasse les attentes.
+            Mon approche est centrée sur la collaboration étroite avec mes clients pour comprendre leurs visions et transformer leurs idées en images captivantes.
           </p>
           <p>
             Je suis toujours à la recherche de nouveaux défis et de projets intéressants. N’hésitez pas à me contacter pour discuter de la manière dont nous pouvons travailler ensemble pour créer quelque chose de mémorable.
