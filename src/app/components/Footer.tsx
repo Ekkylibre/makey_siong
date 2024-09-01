@@ -18,7 +18,7 @@ const FooterContent = styled.div`
 `;
 
 const StyledHr = styled.hr`
-  width: 90%;
+  width: 80%;
   border-top: 1px solid #666;
   margin: 1rem auto;
 `;
