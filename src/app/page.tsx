@@ -1,6 +1,7 @@
 "use client";
 import styled from 'styled-components';
 import Card from './components/Card';
+import { colors } from '../../theme';
 
 // Style pour le fond et la vidéo
 const StyledBackground = styled.div`
@@ -50,7 +51,7 @@ const ServicesSection = styled.section`
   flex-direction: column; // Affiche les éléments en colonne
   align-items: center; // Centre les éléments horizontalement
   gap: 2em; // Espacement entre les cartes
-  background-color: #081319;
+  background-color: ${colors.secondary};
 
   h1 {
     margin: 0;

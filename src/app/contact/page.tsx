@@ -3,6 +3,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import ContactForm from '../components/ContactForm';
 import ScrollDown from '../components/ScrollDown';
+import { colors } from '../../../theme';
 
 const reveal = keyframes`
   0% {
@@ -107,7 +108,7 @@ const StyledLink = styled.a`
 
 const FormSection = styled.section`
   color: white;
-  background-color: #081319;
+  background-color: ${colors.secondary};
   padding-bottom: 20px;
 `;
 
