@@ -47,7 +47,7 @@ const NavItem = styled(Link)`
 
 // Conteneur principal du contenu
 const MainContent = styled.div`
-  padding-top: 100px; /* Assure que le contenu commence sous la navbar */
+  /* padding-top: 100px; Assure que le contenu commence sous la navbar */
   background-color: #0e232d;
 `;
 
