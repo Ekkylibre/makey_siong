@@ -91,6 +91,19 @@ const TextContent = styled.div`
   }
 `;
 
+const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: ${slideUp} 1s ease-out forwards;
+  animation-delay: 1.5s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const FormSection = styled.section`
   color: white;
   background-color: #081319;
@@ -118,9 +131,9 @@ export default function Contact() {
           <p>
             Je suis toujours à la recherche de nouveaux défis et de projets intéressants. N’hésitez pas à me contacter pour discuter de la manière dont nous pouvons travailler ensemble pour créer quelque chose de mémorable.
           </p>
-          <Link href="https://www.youtube.com/watch?v=GbA9Eb1D6qU&t=157s" target="_blank" rel="noopener noreferrer">
+          <StyledLink href="https://www.youtube.com/watch?v=GbA9Eb1D6qU&t=157s" target="_blank" rel="noopener noreferrer">
             En savoir plus sur moi
-          </Link>
+          </StyledLink>
         </TextContent>
       </BackgroundContainer>
       <FormSection id="contact-moi">
