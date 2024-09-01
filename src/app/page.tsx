@@ -75,7 +75,7 @@ export default function Home() {
           <p>RÉALISATEUR</p>
         </div>
         <video autoPlay loop>
-          <source src="/car.mp4" type="video/mp4" />
+          <source src="/demo76mo.mp4" type="video/mp4" />
         </video>
       </StyledBackground>
       <ServicesSection id="services">
