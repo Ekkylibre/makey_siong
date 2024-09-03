@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import Card from './components/Card';
 import { colors, fonts } from '../../theme';
+import services from './data/services.json';
 
 // Style pour le fond et la vidéo
 const StyledBackground = styled.div`
@@ -10,9 +11,9 @@ const StyledBackground = styled.div`
   height: 100vh;
   overflow: hidden;
   display: flex;
-  justify-content: center; // Centre horizontalement
-  align-items: center; // Centre verticalement
-  text-align: center; // Centre le texte à l'intérieur des éléments
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
   video {
     position: absolute;
@@ -21,24 +22,24 @@ const StyledBackground = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; // Assurez-vous que la vidéo est en arrière-plan
+    z-index: -1;
   }
 
   h1, h2 {
-    color: white; // Couleur du texte pour le contraste
-    z-index: 1; // Assurez-vous que le texte est au-dessus de la vidéo
+    color: white;
+    z-index: 1;
   }
 
   h2 {
-    margin-top: 0.5em; // Espacement entre le h1 et le h2
+    margin-top: 0.5em;
   }
 
   p {
-    font-family: ${fonts.secondary}; // Application de la police Bebas Neue
-    font-size: 1.5em; // Taille de police ajustée selon votre design
-    color: white; // Assurez-vous que le texte est bien visible sur la vidéo
-    z-index: 1; // Assurez-vous que le texte est au-dessus de la vidéo
-    margin-top: 0.5em; // Espacement par rapport au titre (h1)
+    font-family: ${fonts.secondary};
+    font-size: 1.5em;
+    color: white;
+    z-index: 1;
+    margin-top: 0.5em;
   }
 `;
 
@@ -48,9 +49,9 @@ const ServicesSection = styled.section`
   background-color: #f4f4f4;
   color: white;
   display: flex;
-  flex-direction: column; // Affiche les éléments en colonne
-  align-items: center; // Centre les éléments horizontalement
-  gap: 2em; // Espacement entre les cartes
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
   background-color: ${colors.secondary};
 
   h1 {
@@ -58,12 +59,11 @@ const ServicesSection = styled.section`
     font-size: 2em;
   }
 
-  // Style pour contenir les cartes dans une rangée
   .cards-container {
     display: flex;
-    justify-content: center; // Centre les cartes horizontalement
-    flex-wrap: wrap; // Permet aux cartes de se déplacer à la ligne suivante si nécessaire
-    gap: 2em; // Espacement entre les cartes
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
   }
 `;
 
@@ -82,24 +82,15 @@ export default function Home() {
       <ServicesSection id="services">
         <h2>SERVICES</h2>
         <div className="cards-container">
-          <Card
-            imageSrc="/moto.jpg"
-            title="Auto-Moto"
-            description="Captation dynamique des véhicules pour des vidéos aussi rapides que fluides."
-            url=""
-          />
-          <Card
-            imageSrc="/corporate.jpg"
-            title="Corporate"
-            description="Création de vidéos corporate professionnelles pour valoriser votre marque."
-            url=""
-          />
-          <Card
-            imageSrc="/social_media.jpg"
-            title="Réseaux Sociaux"
-            description="Vidéos impactantes pour booster votre présence et engagement sur les réseaux sociaux."
-            url=""
-          />
+          {services.cards.map((service, index) => (
+            <Card
+              key={index}
+              imageSrc={service.imageSrc}
+              title={service.title}
+              description={service.description}
+              url={service.url}
+            />
+          ))}
         </div>
       </ServicesSection>
     </>
