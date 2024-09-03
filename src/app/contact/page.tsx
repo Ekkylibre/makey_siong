@@ -3,7 +3,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import ContactForm from '../components/ContactForm';
 import ScrollDown from '../components/ScrollDown';
-import { colors } from '../theme';
+import { colors, padding } from '../theme';
 
 const reveal = keyframes`
   0% {
@@ -41,10 +41,10 @@ const BackgroundContainer = styled.div`
 
 const TextContent = styled.div`
   font-size: 20px;
-  max-width: 600px;
-  margin-left: 150px;
+  max-width: 1200px;
   color: white;
   text-align: left;
+  padding:${padding.horizontalPadding};
 
   h1 {
     margin-bottom: 50px;
