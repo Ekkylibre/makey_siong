@@ -1,14 +1,14 @@
 import styled, { keyframes } from 'styled-components';
 
-// Définir l'animation de fondu
-const fadeIn = keyframes`
+// Définir l'animation de montée
+const slideUp = keyframes`
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
   }
 `;
 
@@ -28,18 +28,15 @@ const ModalContent = styled.div`
   position: relative;
   background-color: white;
   padding: 2rem;
-  max-width: 500px;
+  max-width: 1200px;
   width: 90%;
-  border-radius: 8px;
-  animation: ${fadeIn} 0.3s ease-out;
-`;
-
-const ModalHeader = styled.h2`
-  margin-top: 0;
+  animation: ${slideUp} 0.3s ease-out;
+  text-align: left; /* Align text to the left */
 `;
 
 const ModalBody = styled.div`
   margin-bottom: 1rem;
+  text-align: left; /* Align text to the left */
 `;
 
 const CloseButton = styled.button`
@@ -57,17 +54,15 @@ const CloseButton = styled.button`
 `;
 
 type ModalProps = {
-  title: string;
   content: React.ReactNode;
   onClose: () => void;
 };
 
-export function Modal({ title, content, onClose }: ModalProps) {
+export function Modal({ content, onClose }: ModalProps) {
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={e => e.stopPropagation()}>
         <CloseButton onClick={onClose}>&times;</CloseButton>
-        <ModalHeader>{title}</ModalHeader>
         <ModalBody>{content}</ModalBody>
       </ModalContent>
     </ModalOverlay>

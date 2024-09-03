@@ -87,13 +87,13 @@ export default function Footer() {
       </FooterContent>
 
       {modalOpen === 'confidentialite' && (
-        <Modal title="Politique de Confidentialité" content={<PrivacyPolicy />} onClose={closeModal} />
+        <Modal content={<PrivacyPolicy />} onClose={closeModal} />
       )}
       {modalOpen === 'mentions' && (
-        <Modal title="Mentions Légales" content={<LegalNotice />} onClose={closeModal} />
+        <Modal content={<LegalNotice />} onClose={closeModal} />
       )}
       {modalOpen === 'consentement' && (
-        <Modal title="Consentement pour la Collecte de Données" content={<DataCollectionConsent />} onClose={closeModal} />
+        <Modal content={<DataCollectionConsent />} onClose={closeModal} />
       )}
     </FooterContainer>
   );
