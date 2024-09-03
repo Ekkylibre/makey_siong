@@ -1,7 +1,7 @@
 "use client";
 import styled from 'styled-components';
 import Card from './components/Card';
-import { colors, fonts } from '../../theme';
+import { colors, fonts } from './theme';
 import services from './data/services.json';
 
 // Style pour le fond et la vidéo

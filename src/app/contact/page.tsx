@@ -3,7 +3,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import ContactForm from '../components/ContactForm';
 import ScrollDown from '../components/ScrollDown';
-import { colors } from '../../../theme';
+import { colors } from '../theme';
 
 const reveal = keyframes`
   0% {
