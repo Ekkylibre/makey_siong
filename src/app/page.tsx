@@ -1,7 +1,7 @@
 "use client";
 import styled from 'styled-components';
 import Card from './components/Card';
-import { colors, fonts } from './theme';
+import { colors, fonts, padding } from './theme';
 import services from './data/services.json';
 
 // Style pour le fond et la vidéo
@@ -53,6 +53,7 @@ const ServicesSection = styled.section`
   align-items: center;
   gap: 2em;
   background-color: ${colors.secondary};
+  padding:${padding.horizontalPadding};
 
   h1 {
     margin: 0;
