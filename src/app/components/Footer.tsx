@@ -30,7 +30,7 @@ const Copyright = styled.p`
 
 const FooterLinks = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Mettez les liens sur une seule ligne */
   gap: 0.5rem;
 `;
 
@@ -41,6 +41,15 @@ const FooterLink = styled.a`
 
   &:hover {
     text-decoration: underline;
+  }
+
+  &::after {
+    content: "|";
+    margin-left: 0.5rem;
+  }
+
+  &:last-child::after {
+    content: ""; /* Supprime le "|" après le dernier lien */
   }
 `;
 
