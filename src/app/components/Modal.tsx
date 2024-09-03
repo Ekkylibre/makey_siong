@@ -36,6 +36,7 @@ const ModalContent = styled.div`
 
 const ModalBody = styled.div`
   margin-bottom: 1rem;
+  color: black;
   text-align: left; /* Align text to the left */
 `;
 

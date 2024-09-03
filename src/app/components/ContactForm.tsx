@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
+import { Modal } from './Modal'; // Assurez-vous que le composant Modal est importé correctement
+import PrivacyPolicy from '../(legal)/privacy-policy/page'; // Assurez-vous que le composant PrivacyPolicy est importé correctement
 
-// Styles pour le formulaire
+// Styles pour le formulaire (inchangés)
 const FormContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
@@ -85,9 +87,10 @@ const ConsentLabel = styled.label`
   cursor: pointer;
 `;
 
-const ConsentLink = styled.a`
+const ConsentLink = styled.span`
   color: white; /* Couleur du texte du lien */
   text-decoration: underline; /* Sous-ligne le texte du lien */
+  cursor: pointer; /* Change le curseur en main pour indiquer que c'est cliquable */
   
   &:hover {
     color: #007bff; /* Change la couleur du texte au survol si vous le souhaitez */
@@ -103,6 +106,8 @@ function ContactForm() {
     consent: false
   });
 
+  const [modalOpen, setModalOpen] = useState(false);
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, type, checked, value } = e.target as HTMLInputElement;
     setFormData({
@@ -117,9 +122,16 @@ function ContactForm() {
       alert('Vous devez accepter notre politique de confidentialité pour soumettre le formulaire.');
       return;
     }
-    // Ajoutez ici la logique pour soumettre le formulaire
     console.log('Form data submitted:', formData);
   }
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <FormContainer>
@@ -179,13 +191,18 @@ function ContactForm() {
             required
           />
           <ConsentLabel htmlFor="consent">
-            J’accepte que mes données personnelles soient collectées et utilisées conformément à la <ConsentLink href="/politique-de-confidentialite">politique de confidentialité</ConsentLink>.
+            J’accepte que mes données personnelles soient collectées et utilisées conformément à la{' '}
+            <ConsentLink onClick={openModal}>politique de confidentialité</ConsentLink>.
           </ConsentLabel>
         </ConsentField>
         <SubmitButtonWrapper>
           <SubmitButton type="submit">Envoyer</SubmitButton>
         </SubmitButtonWrapper>
       </form>
+
+      {modalOpen && (
+        <Modal content={<PrivacyPolicy />} onClose={closeModal} />
+      )}
     </FormContainer>
   );
 }
