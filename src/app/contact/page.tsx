@@ -140,7 +140,7 @@ export default function Contact() {
         </TextContent>
       </BackgroundContainer>
       <FormSection id="contact-moi">
-        <CenteredH2>CONTACT-MOI</CenteredH2>
+        <CenteredH2>CONTACTE-MOI</CenteredH2>
         <ContactForm />
       </FormSection>
     </>
