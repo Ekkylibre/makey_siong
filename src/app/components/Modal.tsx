@@ -1,6 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-// Styles du Modal
+// Définir l'animation de fondu
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -14,11 +25,13 @@ const ModalOverlay = styled.div`
 `;
 
 const ModalContent = styled.div`
-  position: relative; /* Nécessaire pour que le CloseButton soit positionné correctement */
+  position: relative;
   background-color: white;
   padding: 2rem;
   max-width: 500px;
   width: 90%;
+  border-radius: 8px;
+  animation: ${fadeIn} 0.3s ease-out;
 `;
 
 const ModalHeader = styled.h2`
@@ -43,7 +56,6 @@ const CloseButton = styled.button`
   line-height: 1;
 `;
 
-// Définition du type pour les props du Modal
 type ModalProps = {
   title: string;
   content: React.ReactNode;
