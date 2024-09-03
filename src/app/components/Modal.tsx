@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Styles du Modal
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -13,6 +14,7 @@ const ModalOverlay = styled.div`
 `;
 
 const ModalContent = styled.div`
+  position: relative; /* Nécessaire pour que le CloseButton soit positionné correctement */
   background-color: white;
   padding: 2rem;
   max-width: 500px;
@@ -36,22 +38,26 @@ const CloseButton = styled.button`
   top: 1rem;
   right: 1rem;
   cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
 `;
 
+// Définition du type pour les props du Modal
 type ModalProps = {
-    title: string;
-    content: React.ReactNode;
-    onClose: () => void;
+  title: string;
+  content: React.ReactNode;
+  onClose: () => void;
 };
 
 export function Modal({ title, content, onClose }: ModalProps) {
-    return (
-        <ModalOverlay onClick={onClose}>
-            <ModalContent onClick={e => e.stopPropagation()}>
-                <CloseButton onClick={onClose}>&times;</CloseButton>
-                <ModalHeader>{title}</ModalHeader>
-                <ModalBody>{content}</ModalBody>
-            </ModalContent>
-        </ModalOverlay>
-    );
+  return (
+    <ModalOverlay onClick={onClose}>
+      <ModalContent onClick={e => e.stopPropagation()}>
+        <CloseButton onClick={onClose}>&times;</CloseButton>
+        <ModalHeader>{title}</ModalHeader>
+        <ModalBody>{content}</ModalBody>
+      </ModalContent>
+    </ModalOverlay>
+  );
 }
