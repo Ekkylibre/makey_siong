@@ -107,15 +107,13 @@ const StyledLink = styled.a`
 `;
 
 const FormSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
   color: white;
   background-color: ${colors.secondary};
-  padding-bottom: 20px;
-`;
-
-const CenteredH2 = styled.h2`
-  text-align: center;
-  color: white;
-  padding: 20px 0;
+  padding:${padding.horizontalPadding};
 `;
 
 export default function Contact() {
@@ -140,7 +138,7 @@ export default function Contact() {
         </TextContent>
       </BackgroundContainer>
       <FormSection id="contact-moi">
-        <CenteredH2>CONTACTE-MOI</CenteredH2>
+        <h2>CONTACTE-MOI</h2>
         <ContactForm />
       </FormSection>
     </>
