@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
-import { colors } from '../../../theme';
+import { colors } from '../theme';
 
 // Conteneur principal de la barre de navigation
 const NavbarContainer = styled.div.withConfig({
@@ -97,7 +97,7 @@ export default function Page() {
       <NavbarContainer hidden={navbarHidden} transparent={navbarTransparent}>
         <Logo href="/">
           <Image
-            src="/mk.png"
+            src="/mk_vision.png"
             alt="Logo"
             width={80}
             height={80}

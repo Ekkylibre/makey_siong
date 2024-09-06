@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 // Définition de l'animation
 const fadeMoveDown = keyframes`
-  0%   { transform: translate(0, -20px) rotate(45deg); opacity: 0; }
+  0%   { transform: translate(0, 0px) rotate(45deg); opacity: 0; }
   50%  { opacity: 1; }
   100% { transform: translate(0, 20px) rotate(45deg); opacity: 0; }
 `;

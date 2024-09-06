@@ -1,8 +1,14 @@
 "use client";
 import styled from 'styled-components';
 import SocialTest from './SocialTest';
-import { colors } from '../../../theme';
+import { colors } from '../theme';
+import { Modal } from './Modal';
+import { useState } from 'react';
+import DataCollectionConsent from '../(legal)/data-collection-consent/_page';
+import LegalNotice from '../(legal)/legal-notice/_page';
+import PrivacyPolicy from '../(legal)/privacy-policy/_page';
 
+// Styles (inchangés)
 const FooterContainer = styled.footer`
   padding: 2rem;
   background-color: ${colors.primary}; 
@@ -18,7 +24,7 @@ const FooterContent = styled.div`
 `;
 
 const StyledHr = styled.hr`
-  width: 90%;
+  width: 80%;
   border-top: 1px solid #666;
   margin: 1rem auto;
 `;
@@ -30,7 +36,7 @@ const Copyright = styled.p`
 
 const FooterLinks = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.5rem;
 `;
 
@@ -42,21 +48,53 @@ const FooterLink = styled.a`
   &:hover {
     text-decoration: underline;
   }
+
+  &::after {
+    content: "|";
+    margin-left: 0.5rem;
+  }
+
+  &:last-child::after {
+    content: "";
+  }
 `;
 
+// Définir le type pour l'état modalOpen
+type ModalType = 'confidentialite' | 'mentions' | 'consentement' | null;
+
 export default function Footer() {
-    return (
-        <FooterContainer>
-          <SocialTest />
-            <StyledHr />
-            <FooterContent>
-                <FooterLinks>
-                    <FooterLink href="/politique-de-confidentialite">Politique de Confidentialité</FooterLink>
-                    <FooterLink href="/mentions-legales">Mentions Légales</FooterLink>
-                    <FooterLink href="/consentement-collecte-donnees">Consentement pour la Collecte de Données</FooterLink>
-                </FooterLinks>
-                <Copyright>© {new Date().getFullYear()} Dany XIONG. Tous droits réservés.</Copyright>
-            </FooterContent>
-        </FooterContainer>
-    );
+  const [modalOpen, setModalOpen] = useState<ModalType>(null);
+
+  const openModal = (modalType: ModalType) => {
+    setModalOpen(modalType);
+  };
+
+  const closeModal = () => {
+    setModalOpen(null);
+  };
+
+  return (
+    <FooterContainer>
+      <SocialTest />
+      <StyledHr />
+      <FooterContent>
+        <FooterLinks>
+          <FooterLink onClick={() => openModal('confidentialite')}>Politique de Confidentialité</FooterLink>
+          <FooterLink onClick={() => openModal('mentions')}>Mentions Légales</FooterLink>
+          <FooterLink onClick={() => openModal('consentement')}>Consentement pour la Collecte de Données</FooterLink>
+        </FooterLinks>
+        <Copyright>© {new Date().getFullYear()} Dany XIONG. Tous droits réservés.</Copyright>
+      </FooterContent>
+
+      {modalOpen === 'confidentialite' && (
+        <Modal content={<PrivacyPolicy />} onClose={closeModal} />
+      )}
+      {modalOpen === 'mentions' && (
+        <Modal content={<LegalNotice />} onClose={closeModal} />
+      )}
+      {modalOpen === 'consentement' && (
+        <Modal content={<DataCollectionConsent />} onClose={closeModal} />
+      )}
+    </FooterContainer>
+  );
 }
