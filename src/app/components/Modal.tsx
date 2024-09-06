@@ -30,14 +30,16 @@ const ModalContent = styled.div`
   padding: 2rem;
   max-width: 1200px;
   width: 90%;
+  max-height: 60vh; /* Définir une hauteur maximale */
+  overflow-y: auto;  /* Activer la barre de défilement si nécessaire */
   animation: ${slideUp} 0.3s ease-out;
-  text-align: left; /* Align text to the left */
+  text-align: left; /* Alignement du texte à gauche */
 `;
 
 const ModalBody = styled.div`
   margin-bottom: 1rem;
   color: black;
-  text-align: left; /* Align text to the left */
+  text-align: left; /* Alignement du texte à gauche */
 `;
 
 const CloseButton = styled.button`
