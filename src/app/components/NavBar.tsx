@@ -8,7 +8,7 @@ import { colors } from '../theme';
 // Conteneur principal de la barre de navigation
 const NavbarContainer = styled.div.withConfig({
   shouldForwardProp: (prop) => !['hidden', 'transparent'].includes(prop),
-}) <{ hidden: boolean; transparent: boolean }>`
+})<{ hidden: boolean; transparent: boolean }>`
   position: fixed;
   top: ${props => (props.hidden ? '-100px' : '0')}; /* Ajuste la position en fonction de la visibilité */
   left: 0;
@@ -99,10 +99,12 @@ export default function Page() {
           <Image
             src="/mk_vision.png"
             alt="Logo"
-            width={80}
-            height={80}
+            layout="intrinsic"
+            width={120}   // Largeur d'origine de l'image
+            height={90}   // Hauteur d'origine de l'image
             quality={100}
             priority
+            objectFit="contain"
           />
         </Logo>
         <NavItems>
