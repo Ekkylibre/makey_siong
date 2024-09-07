@@ -3,7 +3,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 import { colors, padding } from '../theme';
-import Link from 'next/link';
+import ButtonLink from '../components/ButtonLink';
 
 // Animation pour révéler le texte
 const reveal = keyframes`
@@ -78,8 +78,9 @@ const TextColumn = styled.div`
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     animation: ${slideUp} 1s ease forwards;
+    padding-bottom: 50px;
   }
 `;
 
@@ -103,16 +104,21 @@ export default function About() {
             <span>SIONG</span>
           </h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet magna a quam fermentum ultricies. Aenean faucibus, ligula non fringilla auctor, mi sapien convallis libero, nec dapibus arcu lorem sit amet sapien. Maecenas fringilla, enim ut hendrerit hendrerit, risus orci convallis eros, sit amet tincidunt mi purus nec risus. Nulla at risus suscipit, malesuada nisi vel, pellentesque justo. Aliquam erat volutpat. In hac habitasse platea dictumst. Suspendisse potenti. Proin nec ante vitae metus tincidunt rhoncus. Aliquam vehicula pharetra viverra. Pellentesque eu mauris vel lectus hendrerit elementum id nec lorem. Phasellus laoreet nisi et eros condimentum, a tincidunt sem rhoncus.
-
-            Morbi vehicula sollicitudin massa, ut gravida justo. Sed efficitur lacus lacus, a finibus nisl luctus eget. Quisque tincidunt libero a metus dictum, a sollicitudin metus vehicula. Mauris non metus nisl. Donec auctor magna et ultricies aliquet. Fusce nec dignissim risus. Fusce sit amet lorem nunc. Aenean ac volutpat leo. Sed in tincidunt lacus, et posuere enim. Phasellus gravida enim lectus, at fringilla mauris fermentum non. Curabitur sollicitudin sollicitudin diam. Nam rutrum libero risus, ut interdum nulla ultrices vel. Mauris dictum, eros at auctor vulputate, ipsum tortor efficitur odio, in condimentum dui turpis id nunc. Aliquam dignissim erat eget sem lacinia, vel tempus nulla congue. Curabitur in dictum eros, sit amet laoreet felis.
-
-            Sed nec tristique risus. Ut varius, magna vel interdum luctus, ex nulla rhoncus ex, et efficitur felis orci id justo. Suspendisse potenti. Nullam pellentesque bibendum scelerisque. Donec sagittis purus in purus vehicula, id fermentum quam mollis. Nam convallis turpis purus, ac vestibulum elit egestas vitae. Donec sit amet augue nec dolor bibendum laoreet a in libero. Etiam pretium rhoncus sollicitudin. Integer auctor nisi sed eros dignissim ultricies. Suspendisse potenti. In non fringilla ex, et tempor enim.
-
-            Suspendisse potenti. Proin fermentum accumsan malesuada. Ut tempus lacinia libero. Nulla tincidunt egestas lectus, non rutrum tortor suscipit eu. In nec urna est. Vestibulum aliquam ligula et felis vehicula, sit amet dapibus orci volutpat. Nulla ut vehicula purus. Cras bibendum odio eget urna pharetra bibendum. Vestibulum sodales malesuada lorem, in vulputate lacus ultricies non. Donec sit amet tincidunt dui, sed facilisis nisi. Suspendisse faucibus dapibus nisi, ac accumsan sapien egestas sit amet. Nulla aliquet ligula vitae sapien fermentum, in posuere turpis ultricies. Nullam fermentum lacinia nisl a sollicitudin.
-
-            Fusce non nulla sed metus scelerisque aliquet. Aliquam ultricies diam at libero facilisis, eget suscipit ipsum scelerisque. Nam id odio quis leo suscipit laoreet. Mauris consequat tortor id leo molestie congue. Cras pellentesque rhoncus augue, ac tempor risus consectetur at. Fusce vitae lacinia risus. Quisque ut ante dolor. Sed eget pharetra libero. Mauris nec arcu quam. Suspendisse scelerisque ligula sit amet nulla suscipit efficitur. Mauris fringilla augue velit, nec vulputate libero ultricies nec. Suspendisse id consequat est, vitae dictum lorem. Vestibulum lobortis urna arcu, vel suscipit tortor hendrerit sit amet. Mauris posuere, ex quis euismod dictum, felis dui fringilla tortor, a malesuada metus risus sit amet leo. Phasellus ut convallis ligula.
+            Passionné de vidéo depuis 2015, puis en 2021, j’ai décidé d’en faire mon métier et me spécialiser
+            dans le domaine de la communication visuelle.
+            <br /><br />
+            J’ai développé un perfectionnisme pour répondre aux projets, des plus simples aux plus challengeants.
+            Je suis constamment en apprentissage, car je veux toujours être meilleur qu’hier.
+            <br /><br />
+            Chaque projet est unique. Par mon expertise, je m’engage à répondre à vos demandes
+            et ainsi développer au mieux votre marque et votre présence sur internet.
           </p>
+          <ButtonLink
+            href="/contact"
+            bgColor={colors.secondary}
+          >
+            Contactez-moi
+          </ButtonLink>
           <a
             href="https://www.youtube.com/watch?v=GbA9Eb1D6qU&t=157s"
             target="_blank"
