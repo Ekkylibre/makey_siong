@@ -11,7 +11,7 @@ const CardContainer = styled.div`
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: ${colors.primary};
+  background-color: ${colors.tertiary};
   color: white;
   transition: transform 1s ease;
 

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { colors } from '../theme';
 
 const StyledButtonLink = styled.a`
-  background-color: ${colors.primary};
+  background-color: ${colors.tertiary};
   color: white;
   border: 1px solid white;
   padding: 0.5rem 1rem;

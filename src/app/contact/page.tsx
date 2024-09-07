@@ -5,14 +5,21 @@ import Image from 'next/image'; // Importer le composant Image
 import ContactForm from '../components/ContactForm';
 import { colors, padding } from '../theme';
 
-// Composant Banner stylisé
+// Composant principal qui occupe toute la hauteur de la vue
+const ContactContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Hauteur de 100% de la vue */
+  overflow: hidden; /* Empêche le défilement si le contenu dépasse */
+`;
+
 const Banner = styled.div`
   display: flex;
-  flex-direction: column; /* Change pour aligner les éléments verticalement */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 200px; /* Ajuste la hauteur selon tes besoins */
-  background-color: ${colors.tertiary}; /* Couleur de fond de la bannière */
+  background-color: ${colors.secondary};
   color: white;
   padding: 10em; /* Réduit le padding pour mieux ajuster la mise en page */
 `;
@@ -24,21 +31,22 @@ const BannerTitle = styled.h1`
 
 const BannerSubtitle = styled.a`
   font-size: 1.2em; /* Ajuste la taille de la police selon tes besoins */
-  margin: 0.5em 0 0; /* Marge au-dessus du texte */
-  color: #f0f0f0; /* Couleur du texte, peut être modifiée */
-  text-decoration: none; /* Enlève le soulignement par défaut des liens */
+  margin: 0.5em 0 0;
+  color: #f0f0f0;
+  text-decoration: none;
   &:hover {
-    text-decoration: underline; /* Souligne le texte au survol pour indiquer qu'il est cliquable */
+    text-decoration: underline;
   }
 `;
 
 const FormSection = styled.section`
   display: flex;
-  justify-content: space-between; /* Aligne les éléments horizontalement */
+  flex: 1; /* Permet à cette section de prendre l'espace restant */
+  justify-content: space-between;
   align-items: center;
   gap: 2em;
   color: white;
-  background-color: ${colors.tertiary};
+  background-color: ${colors.secondary};
   padding: ${padding.horizontalPadding};
 `;
 
@@ -55,7 +63,7 @@ const ImageContainer = styled.div`
 
 export default function Contact() {
   return (
-    <>
+    <ContactContainer>
       <Banner>
         <BannerTitle>CRÉONS ENSEMBLE</BannerTitle>
         <BannerSubtitle href="mailto:mk.vision@hotmail.com">mk.vision@hotmail.com</BannerSubtitle>
@@ -68,6 +76,6 @@ export default function Contact() {
           <Image src="/contact.jpg" alt="Contact" layout="responsive" width={500} height={500} />
         </ImageContainer>
       </FormSection>
-    </>
+    </ContactContainer>
   );
 }

@@ -27,7 +27,7 @@ const slideUp = keyframes`
 `;
 
 const BackgroundContainer = styled.div`
-  background-color: ${colors.tertiary};
+  background-color: ${colors.secondary};
   height: 100%;
   width: 100%;
   padding: ${padding.horizontalPadding};

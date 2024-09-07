@@ -51,7 +51,7 @@ const SubmitButtonWrapper = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  background-color: ${colors.tertiary}; /* Couleur de fond initiale */
+  background-color: ${colors.secondary}; /* Couleur de fond initiale */
   color: white; /* Couleur du texte */
   border: 1px solid white; /* Bordure blanche */
   padding: 0.5rem 1rem;

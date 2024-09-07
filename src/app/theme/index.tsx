@@ -1,8 +1,10 @@
 export const colors = {
-  primary: "#0e232d",
-  secondary: "#081319",
-  tertiary: "#0b0b0b",
+  primary: "black",
+  secondary: "#0b0b0b",
+  tertiary: "#0e232d",
+  quaternary: "#081319",
 };
+
 
 export const fonts = {
   primary: "",

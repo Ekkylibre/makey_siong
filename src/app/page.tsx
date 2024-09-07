@@ -46,13 +46,12 @@ const StyledBackground = styled.div`
 // Style pour la section des services
 const ServicesSection = styled.section`
   padding: 2em;
-  background-color: #f4f4f4;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2em;
-  background-color: ${colors.secondary};
+  background-color: ${colors.quaternary};
   padding:${padding.horizontalPadding};
 
   h1 {
