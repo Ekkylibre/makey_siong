@@ -9,13 +9,13 @@
         {
             "imageSrc": "/corporate.jpg",
             "title": "Corporate",
-            "description": "Création de vidéos corporate professionnelles pour valoriser votre marque.",
+            "description": "Création de vidéos corporate pour valoriser votre marque.",
             "url": ""
         },
         {
             "imageSrc": "/social_media.jpg",
             "title": "Réseaux Sociaux",
-            "description": "Vidéos impactantes pour booster votre présence et engagement sur les réseaux sociaux.",
+            "description": "Vidéos impactantes pour booster votre présence sur les réseaux sociaux.",
             "url": ""
         }
     ]
