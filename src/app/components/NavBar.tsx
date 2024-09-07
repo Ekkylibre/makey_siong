@@ -10,7 +10,6 @@ const NavbarContainer = styled.div.withConfig({
   shouldForwardProp: (prop) => !['hidden', 'transparent'].includes(prop),
 })<{ hidden: boolean; transparent: boolean }>`
   position: fixed;
-  top: ${props => (props.hidden ? '-100px' : '0')}; /* Ajuste la position en fonction de la visibilité */
   left: 0;
   width: 100%;
   display: flex;
