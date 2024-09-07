@@ -9,8 +9,6 @@ const FormContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  background-color: ${colors.primary};
 `;
 
 const FormField = styled.div`
@@ -53,7 +51,7 @@ const SubmitButtonWrapper = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  background-color: ${colors.primary}; /* Couleur de fond initiale */
+  background-color: ${colors.tertiary}; /* Couleur de fond initiale */
   color: white; /* Couleur du texte */
   border: 1px solid white; /* Bordure blanche */
   padding: 0.5rem 1rem;
