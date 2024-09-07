@@ -34,13 +34,12 @@ const Container = styled.div`
   max-width: 800px;
   margin: auto;
   background-color: #f9f9f9;
-  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const Title = styled.h1`
   font-size: 3rem;
-  color: ${colors.primary};
+  color: ${colors.tertiary};
   text-align: center;
   margin-bottom: 30px;
   letter-spacing: 2px;
@@ -50,7 +49,6 @@ const Section = styled.div`
   margin-bottom: 30px;
   padding: 20px;
   background-color: #ffffff;
-  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
@@ -66,7 +64,7 @@ const SectionTitle = styled.h2`
     content: "";
     width: 40px;
     height: 4px;
-    background-color: ${colors.primary};
+    background-color: ${colors.tertiary};
     position: absolute;
     bottom: -10px;
     left: 0;
