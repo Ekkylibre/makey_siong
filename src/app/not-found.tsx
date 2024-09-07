@@ -24,7 +24,7 @@ const Title = styled.h1`
 `;
 
 // Style du lien
-const HomeLink = styled.a`
+const StyledLink = styled(Link)`
   font-size: 1.5rem;
   color: white;
   text-decoration: underline;
@@ -34,9 +34,7 @@ const NotFound: React.FC = () => {
   return (
     <Container>
       <Title>Erreur : Page non trouvée !</Title>
-      <Link href="/" passHref>
-        <HomeLink>Retour à la page d’accueil</HomeLink>
-      </Link>
+      <StyledLink href="/">Retour à la page d’accueil</StyledLink>
     </Container>
   );
 };
