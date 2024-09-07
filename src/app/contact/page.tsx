@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image'; // Importer le composant Image
 import ContactForm from '../components/ContactForm';
-import { colors, padding } from '../theme';
+import { colors, fonts, padding } from '../theme';
 
 // Composant principal qui occupe toute la hauteur de la vue
 const ContactContainer = styled.div`
@@ -34,6 +34,7 @@ const BannerSubtitle = styled.a`
   margin: 0.5em 0 0;
   color: #f0f0f0;
   text-decoration: none;
+  font-family: ${fonts.secondary};
   &:hover {
     text-decoration: underline;
   }
