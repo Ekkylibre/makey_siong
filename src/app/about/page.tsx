@@ -1,12 +1,10 @@
 "use client";
-
-"use client";
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import ContactForm from '../components/ContactForm';
-import ScrollDown from '../components/ScrollDown';
+import Image from 'next/image';
 import { colors, padding } from '../theme';
 
+// Animation pour révéler le texte
 const reveal = keyframes`
   0% {
     clip-path: inset(100% 0 0 0);
@@ -16,6 +14,7 @@ const reveal = keyframes`
   }
 `;
 
+// Animation pour faire apparaître le texte en montant
 const slideUp = keyframes`
   0% {
     opacity: 0;
@@ -29,116 +28,93 @@ const slideUp = keyframes`
 
 const BackgroundContainer = styled.div`
   background-color: ${colors.tertiary};
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  padding: ${padding.horizontalPadding};
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
+  flex-direction: column;
 `;
 
-const TextContent = styled.div`
-  font-size: 20px;
-  max-width: 1200px;
+const ContentContainer = styled.div`
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  gap: 100px;
+`;
+
+const PhotoColumn = styled.div`
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const TextColumn = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30%;
+  animation: ${slideUp} 1s ease forwards;
   color: white;
-  text-align: left;
-  padding:${padding.horizontalPadding};
+  position: relative;
 
   h1 {
+    font-size: 5rem;
     margin-bottom: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
-    display: inline-block;
-    animation: ${reveal} 0.5s ease-out forwards;
+    transform: translateX(-60%);
+
+    span {
+      display: block;
+      animation: ${reveal} 1.5s ease forwards;
+    }
   }
 
   p {
-    margin-bottom: 20px;
-    opacity: 0;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-    transform: translateY(20px);
-    animation: ${slideUp} 1s ease-out forwards;
-
-    &:nth-of-type(1) {
-      animation-delay: 0.3s;
-    }
-
-    &:nth-of-type(2) {
-      animation-delay: 0.6s;
-    }
-
-    &:nth-of-type(3) {
-      animation-delay: 0.9s;
-    }
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
-    &:first-of-type::before {
-      content: '“';
-      font-size: 2.5em;
-      margin-right: 0.2em;
-      vertical-align: middle;
-    }
-
-    &:last-of-type::after {
-      content: '”';
-      font-size: 2.5em;
-      margin-left: 0.2em;
-      vertical-align: middle;
-    }
+    font-size: 1.2rem;
+    animation: ${slideUp} 1s ease forwards;
   }
-`;
-
-const StyledLink = styled.a`
-  color: white;
-  text-decoration: none;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: ${slideUp} 1s ease-out forwards;
-  animation-delay: 1.5s;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const FormSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2em;
-  color: white;
-  background-color: ${colors.secondary};
-  padding:${padding.horizontalPadding};
 `;
 
 export default function About() {
-    return (
-        <>
-            <BackgroundContainer>
-                {/* <TextContent>
-          <h1>Makey Siong</h1>
+  return (
+    <BackgroundContainer>
+      <ContentContainer>
+        <PhotoColumn>
+          <Image
+            src="/profile.jpg"
+            alt="Photo de profil"
+            width={500}
+            height={700}
+            style={{ objectFit: 'cover' }}
+            quality={100}
+          />
+        </PhotoColumn>
+        <TextColumn>
+          <h1>
+            <span>MAKEY</span>
+            <span>SIONG</span>
+          </h1>
           <p>
-            En tant que filmmaker passionné, je m’efforce de capturer les émotions et les histoires à travers la lentille de ma caméra. Mon travail est une exploration constante de la créativité et de l’authenticité, où chaque projet devient une aventure unique.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet magna a quam fermentum ultricies. Aenean faucibus, ligula non fringilla auctor, mi sapien convallis libero, nec dapibus arcu lorem sit amet sapien. Maecenas fringilla, enim ut hendrerit hendrerit, risus orci convallis eros, sit amet tincidunt mi purus nec risus. Nulla at risus suscipit, malesuada nisi vel, pellentesque justo. Aliquam erat volutpat. In hac habitasse platea dictumst. Suspendisse potenti. Proin nec ante vitae metus tincidunt rhoncus. Aliquam vehicula pharetra viverra. Pellentesque eu mauris vel lectus hendrerit elementum id nec lorem. Phasellus laoreet nisi et eros condimentum, a tincidunt sem rhoncus.
+
+            Morbi vehicula sollicitudin massa, ut gravida justo. Sed efficitur lacus lacus, a finibus nisl luctus eget. Quisque tincidunt libero a metus dictum, a sollicitudin metus vehicula. Mauris non metus nisl. Donec auctor magna et ultricies aliquet. Fusce nec dignissim risus. Fusce sit amet lorem nunc. Aenean ac volutpat leo. Sed in tincidunt lacus, et posuere enim. Phasellus gravida enim lectus, at fringilla mauris fermentum non. Curabitur sollicitudin sollicitudin diam. Nam rutrum libero risus, ut interdum nulla ultrices vel. Mauris dictum, eros at auctor vulputate, ipsum tortor efficitur odio, in condimentum dui turpis id nunc. Aliquam dignissim erat eget sem lacinia, vel tempus nulla congue. Curabitur in dictum eros, sit amet laoreet felis.
+
+            Sed nec tristique risus. Ut varius, magna vel interdum luctus, ex nulla rhoncus ex, et efficitur felis orci id justo. Suspendisse potenti. Nullam pellentesque bibendum scelerisque. Donec sagittis purus in purus vehicula, id fermentum quam mollis. Nam convallis turpis purus, ac vestibulum elit egestas vitae. Donec sit amet augue nec dolor bibendum laoreet a in libero. Etiam pretium rhoncus sollicitudin. Integer auctor nisi sed eros dignissim ultricies. Suspendisse potenti. In non fringilla ex, et tempor enim.
+
+            Suspendisse potenti. Proin fermentum accumsan malesuada. Ut tempus lacinia libero. Nulla tincidunt egestas lectus, non rutrum tortor suscipit eu. In nec urna est. Vestibulum aliquam ligula et felis vehicula, sit amet dapibus orci volutpat. Nulla ut vehicula purus. Cras bibendum odio eget urna pharetra bibendum. Vestibulum sodales malesuada lorem, in vulputate lacus ultricies non. Donec sit amet tincidunt dui, sed facilisis nisi. Suspendisse faucibus dapibus nisi, ac accumsan sapien egestas sit amet. Nulla aliquet ligula vitae sapien fermentum, in posuere turpis ultricies. Nullam fermentum lacinia nisl a sollicitudin.
+
+            Fusce non nulla sed metus scelerisque aliquet. Aliquam ultricies diam at libero facilisis, eget suscipit ipsum scelerisque. Nam id odio quis leo suscipit laoreet. Mauris consequat tortor id leo molestie congue. Cras pellentesque rhoncus augue, ac tempor risus consectetur at. Fusce vitae lacinia risus. Quisque ut ante dolor. Sed eget pharetra libero. Mauris nec arcu quam. Suspendisse scelerisque ligula sit amet nulla suscipit efficitur. Mauris fringilla augue velit, nec vulputate libero ultricies nec. Suspendisse id consequat est, vitae dictum lorem. Vestibulum lobortis urna arcu, vel suscipit tortor hendrerit sit amet. Mauris posuere, ex quis euismod dictum, felis dui fringilla tortor, a malesuada metus risus sit amet leo. Phasellus ut convallis ligula.
           </p>
-          <p>
-            Mon approche est centrée sur la collaboration étroite avec mes clients pour comprendre leurs visions et transformer leurs idées en images captivantes.
-          </p>
-          <p>
-            Je suis toujours à la recherche de nouveaux défis et de projets intéressants. N’hésitez pas à me contacter pour discuter de la manière dont nous pouvons travailler ensemble pour créer quelque chose de mémorable.
-          </p>
-          <StyledLink href="https://www.youtube.com/watch?v=GbA9Eb1D6qU&t=157s" target="_blank" rel="noopener noreferrer">
-            En savoir plus sur moi
-          </StyledLink>
-          <ScrollDown targetId="contact-moi" />
-        </TextContent> */}
-            </BackgroundContainer>
-        </>
-    );
+        </TextColumn>
+      </ContentContainer>
+    </BackgroundContainer>
+  );
 }
