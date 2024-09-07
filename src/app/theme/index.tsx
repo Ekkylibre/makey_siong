@@ -10,5 +10,5 @@ export const fonts = {
 };
 
 export const padding = {
-  horizontalPadding: '2em 10em',
+  horizontalPadding: '2em 20em',
 };
