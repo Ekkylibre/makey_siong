@@ -36,7 +36,6 @@ const StyledBackground = styled.div`
 
   p {
     font-family: ${fonts.secondary};
-    font-size: 1.5em;
     color: white;
     z-index: 1;
     margin-top: 0.5em;

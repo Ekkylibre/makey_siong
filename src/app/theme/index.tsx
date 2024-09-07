@@ -8,7 +8,7 @@ export const colors = {
 
 export const fonts = {
   primary: "",
-  secondary: "'Bebas Neue',sans-serif",
+  secondary: "'Poppins', sans-serif",
 };
 
 export const padding = {
