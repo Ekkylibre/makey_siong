@@ -69,9 +69,11 @@ const Card: React.FC<CardProps> = ({ imageSrc, title, description, url }) => {
       <CardContent>
         <CardTitle>{title}</CardTitle>
         <Description>{description}</Description>
-        <ButtonLink href={url} target="_blank" rel="noopener noreferrer">
-          En savoir plus
-        </ButtonLink>
+        <ButtonLink
+            href="/"
+            bgColor={colors.tertiary}>
+            En savoir plus
+          </ButtonLink>
       </CardContent>
     </CardContainer>
   );
