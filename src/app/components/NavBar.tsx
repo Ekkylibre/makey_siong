@@ -110,6 +110,7 @@ export default function Page() {
           <NavItem href="/#services">SERVICES</NavItem>
           <NavItem href="/portfolio">PORTFOLIO</NavItem>
           <NavItem href="/contact">CONTACT</NavItem>
+          <NavItem href="/about">ABOUT</NavItem>
         </NavItems>
       </NavbarContainer>
       <MainContent>
