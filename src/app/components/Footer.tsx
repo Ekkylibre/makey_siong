@@ -4,9 +4,9 @@ import SocialTest from './SocialTest';
 import { colors } from '../theme';
 import { Modal } from './Modal';
 import { useState } from 'react';
-import DataCollectionConsent from '../(legal)/data-collection-consent/_page';
-import LegalNotice from '../(legal)/legal-notice/_page';
-import PrivacyPolicy from '../(legal)/privacy-policy/_page';
+import DataCollectionConsent from '../legal/data-collection-consent/_page';
+import LegalNotice from '../legal/legal-notice/_page';
+import PrivacyPolicy from '../legal/privacy-policy/_page';
 
 // Styles (inchangés)
 const FooterContainer = styled.footer`

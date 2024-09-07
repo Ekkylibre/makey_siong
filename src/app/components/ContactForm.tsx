@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
 import { Modal } from './Modal'; // Assurez-vous que le composant Modal est importé correctement
-import PrivacyPolicy from '../(legal)/privacy-policy/_page'; // Assurez-vous que le composant PrivacyPolicy est importé correctement
+import PrivacyPolicy from '../legal/privacy-policy/_page'; // Assurez-vous que le composant PrivacyPolicy est importé correctement
 
 // Styles pour le formulaire (inchangés)
 const FormContainer = styled.div`
