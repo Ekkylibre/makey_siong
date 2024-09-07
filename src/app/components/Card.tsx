@@ -5,7 +5,7 @@ import { colors } from '../theme';
 
 // Style pour la carte avec effet de zoom au survol
 const CardContainer = styled.div`
-  width: 400px;
+  width: 350px;
   height: 500px;
   overflow: hidden;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
