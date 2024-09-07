@@ -28,7 +28,7 @@ const slideUp = keyframes`
 `;
 
 const BackgroundContainer = styled.div`
-  background-image: url('/profile.jpg');
+  background-color: ${colors.tertiary};
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -119,10 +119,10 @@ const FormSection = styled.section`
 `;
 
 export default function About() {
-  return (
-    <>
-      <BackgroundContainer>
-        <TextContent>
+    return (
+        <>
+            <BackgroundContainer>
+                {/* <TextContent>
           <h1>Makey Siong</h1>
           <p>
             En tant que filmmaker passionné, je m’efforce de capturer les émotions et les histoires à travers la lentille de ma caméra. Mon travail est une exploration constante de la créativité et de l’authenticité, où chaque projet devient une aventure unique.
@@ -137,8 +137,8 @@ export default function About() {
             En savoir plus sur moi
           </StyledLink>
           <ScrollDown targetId="contact-moi" />
-        </TextContent>
-      </BackgroundContainer>
-    </>
-  );
+        </TextContent> */}
+            </BackgroundContainer>
+        </>
+    );
 }

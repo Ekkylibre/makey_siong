@@ -1,6 +1,7 @@
 export const colors = {
   primary: "#0e232d",
   secondary: "#081319",
+  tertiary: "#0b0b0b",
 };
 
 export const fonts = {
