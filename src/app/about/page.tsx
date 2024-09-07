@@ -3,6 +3,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 import { colors, padding } from '../theme';
+import Link from 'next/link';
 
 // Animation pour révéler le texte
 const reveal = keyframes`
@@ -112,14 +113,20 @@ export default function About() {
 
             Fusce non nulla sed metus scelerisque aliquet. Aliquam ultricies diam at libero facilisis, eget suscipit ipsum scelerisque. Nam id odio quis leo suscipit laoreet. Mauris consequat tortor id leo molestie congue. Cras pellentesque rhoncus augue, ac tempor risus consectetur at. Fusce vitae lacinia risus. Quisque ut ante dolor. Sed eget pharetra libero. Mauris nec arcu quam. Suspendisse scelerisque ligula sit amet nulla suscipit efficitur. Mauris fringilla augue velit, nec vulputate libero ultricies nec. Suspendisse id consequat est, vitae dictum lorem. Vestibulum lobortis urna arcu, vel suscipit tortor hendrerit sit amet. Mauris posuere, ex quis euismod dictum, felis dui fringilla tortor, a malesuada metus risus sit amet leo. Phasellus ut convallis ligula.
           </p>
-          <Image
-            src="/signature_blanc.png"
-            alt="signature"
-            width={400}
-            height={300}
-            style={{ objectFit: 'cover' }}
-            quality={100}
-          />
+          <a
+            href="https://www.youtube.com/watch?v=GbA9Eb1D6qU&t=157s"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/signature_blanc.png"
+              alt="signature"
+              width={400}
+              height={300}
+              style={{ objectFit: 'cover' }}
+              quality={100}
+            />
+          </a>
         </TextColumn>
       </ContentContainer>
     </BackgroundContainer>
