@@ -38,7 +38,6 @@ const BackgroundContainer = styled.div`
 const ContentContainer = styled.div`
   display: flex;
   padding-top: 100px;
-  padding-bottom: 100px;
   gap: 100px;
 `;
 
@@ -56,7 +55,7 @@ const TextColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 30%;
+  margin-top: 25%;
   animation: ${slideUp} 1s ease forwards;
   color: white;
   position: relative;
@@ -113,6 +112,14 @@ export default function About() {
 
             Fusce non nulla sed metus scelerisque aliquet. Aliquam ultricies diam at libero facilisis, eget suscipit ipsum scelerisque. Nam id odio quis leo suscipit laoreet. Mauris consequat tortor id leo molestie congue. Cras pellentesque rhoncus augue, ac tempor risus consectetur at. Fusce vitae lacinia risus. Quisque ut ante dolor. Sed eget pharetra libero. Mauris nec arcu quam. Suspendisse scelerisque ligula sit amet nulla suscipit efficitur. Mauris fringilla augue velit, nec vulputate libero ultricies nec. Suspendisse id consequat est, vitae dictum lorem. Vestibulum lobortis urna arcu, vel suscipit tortor hendrerit sit amet. Mauris posuere, ex quis euismod dictum, felis dui fringilla tortor, a malesuada metus risus sit amet leo. Phasellus ut convallis ligula.
           </p>
+          <Image
+            src="/signature_blanc.png"
+            alt="signature"
+            width={400}
+            height={300}
+            style={{ objectFit: 'cover' }}
+            quality={100}
+          />
         </TextColumn>
       </ContentContainer>
     </BackgroundContainer>
