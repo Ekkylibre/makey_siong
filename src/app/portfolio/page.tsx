@@ -5,7 +5,7 @@ import { ReactCompareSlider } from 'react-compare-slider';
 import { colors, padding } from '../theme';
 import Image from 'next/image';
 import achievementsData from '../data/achievements.json';
-import Carousel from '../components/Carrousel';
+import Carousel from '../components/Carousel';
 
 const PortfolioContainer = styled.div`
   display: flex;
