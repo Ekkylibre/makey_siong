@@ -8,7 +8,6 @@ import PrivacyPolicy from '../legal/privacy-policy/_page'; // Assurez-vous que l
 const FormContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
 `;
 
 const FormField = styled.div`

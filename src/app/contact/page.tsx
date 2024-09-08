@@ -62,6 +62,12 @@ const ImageContainer = styled.div`
   align-items: center;
 `;
 
+const SectionHeader = styled.h2`
+  font-size: 2em; /* Ajuste la taille de la police selon tes besoins */
+  color: white;
+  margin-bottom: 1em;
+`;
+
 export default function Contact() {
   return (
     <ContactContainer>
@@ -71,6 +77,7 @@ export default function Contact() {
       </Banner>
       <FormSection id="contact-moi">
         <FormContainer>
+          <SectionHeader>CONTACTE-MOI</SectionHeader>
           <ContactForm />
         </FormContainer>
         <ImageContainer>
@@ -80,3 +87,4 @@ export default function Contact() {
     </ContactContainer>
   );
 }
+
