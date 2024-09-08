@@ -79,7 +79,7 @@ const TextColumn = styled.div`
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: ${fonts.secondary};
     animation: ${slideUp} 1s ease forwards;
     padding-bottom: 50px;
