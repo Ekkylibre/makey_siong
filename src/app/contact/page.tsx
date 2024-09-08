@@ -59,6 +59,8 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  height: 100%; /* Assure-toi que le conteneur a une hauteur définie */
 `;
 
 const SectionHeader = styled.h2`
@@ -80,10 +82,16 @@ export default function Contact() {
           <ContactForm />
         </FormContainer>
         <ImageContainer>
-          <Image src="/contact.jpg" alt="Contact" layout="responsive" width={500} height={500} />
+          <Image
+            src="/contact.jpg"
+            alt="Contact"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority // Ajoute la prop priority
+            style={{ objectFit: 'cover' }}
+          />
         </ImageContainer>
       </FormSection>
     </ContactContainer>
   );
 }
-
