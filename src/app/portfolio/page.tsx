@@ -138,6 +138,7 @@ const VideoModal = styled.div`
   align-items: center;
   z-index: 1000;
   padding: 20px;
+  overflow: hidden; /* Empêche le défilement */
 `;
 
 const VideoIframe = styled.iframe`
@@ -157,6 +158,26 @@ const CloseButton = styled.button`
   cursor: pointer;
 `;
 
+// Déclaration des props pour ArrowButton
+interface ArrowButtonProps {
+  left?: boolean;
+}
+
+// Styles pour les flèches de navigation
+const ArrowButton = styled.button<ArrowButtonProps>`
+  position: absolute;
+  ${props => props.left ? 'left: 70px;' : 'right: 70px;'}
+  background: transparent; /* Retire le fond noir */
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1001;
+  font-size: 100px;
+  border: none; /* Assure qu'il n'y a pas de bordure */
+  outline: none; /* Retire le contour lors du focus */
+`;
+
+
 const getYouTubeEmbedURL = (url: string) => {
   const videoId = new URL(url).searchParams.get('v');
   return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
@@ -164,6 +185,7 @@ const getYouTubeEmbedURL = (url: string) => {
 
 export default function Portfolio() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const handleThumbnailClick = (url: string) => {
     setSelectedVideo(getYouTubeEmbedURL(url));
@@ -175,6 +197,16 @@ export default function Portfolio() {
 
   const handleCloseModal = () => {
     setSelectedVideo(null);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? achievementsData.achievements.length - 1 : prevIndex - 1));
+    setSelectedVideo(getYouTubeEmbedURL(achievementsData.achievements[currentIndex].url));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === achievementsData.achievements.length - 1 ? 0 : prevIndex + 1));
+    setSelectedVideo(getYouTubeEmbedURL(achievementsData.achievements[currentIndex].url));
   };
 
   return (
@@ -195,7 +227,7 @@ export default function Portfolio() {
         </MainImageContainer>
         <Spacer /> {/* Espace coloré en bas */}
         <ThumbnailContainer>
-          {achievementsData.achievements.slice(1).map((achievement) => (
+          {achievementsData.achievements.slice(1).map((achievement, index) => (
             <ThumbnailCard key={achievement.id} onClick={() => handleThumbnailClick(achievement.url)}>
               <ThumbnailImage
                 src={achievement.imageSrc}
@@ -215,11 +247,13 @@ export default function Portfolio() {
       {selectedVideo && (
         <VideoModal>
           <CloseButton onClick={handleCloseModal}>X</CloseButton>
+          <ArrowButton left onClick={handlePrev}>‹</ArrowButton>
           <VideoIframe
             src={selectedVideo}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
+          <ArrowButton onClick={handleNext}>›</ArrowButton>
         </VideoModal>
       )}
     </PortfolioContainer>
