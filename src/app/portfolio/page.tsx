@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ReactCompareSlider } from 'react-compare-slider';
-import { colors, padding } from '../theme';
+import { colors, fonts, padding } from '../theme';
 import Image from 'next/image';
 import achievementsData from '../data/achievements.json';
 import Carousel from '../components/Carousel';
@@ -135,6 +135,10 @@ const CompareSection = styled.div`
 const TextWrapper = styled.div`
   width: 50%;
   padding-right: 20px;
+  font-family: ${fonts.secondary};
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 const CompareSliderWrapper = styled.div`
@@ -163,7 +167,7 @@ export default function Portfolio() {
         <Spacer />
         <MainImageContainer onClick={() => handleMainImageClick(achievementsData.achievements[0].url)}>
           <MainImage>
-            <Image 
+            <Image
               src={achievementsData.achievements[0].imageSrc}
               alt={achievementsData.achievements[0].title}
               fill
