@@ -8,8 +8,8 @@ import DataCollectionConsent from '../legal/data-collection-consent/_page';
 import LegalNotice from '../legal/legal-notice/_page';
 import PrivacyPolicy from '../legal/privacy-policy/_page';
 
-// Styles (inchangés)
-const FooterContainer = styled.footer`
+// Styles modifiés : FooterContainer est maintenant une div
+const FooterContainer = styled.div`
   padding: 2rem;
   background-color: ${colors.primary}; 
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
