@@ -1,8 +1,8 @@
-// src/app/portfolio/page.tsx
 "use client";
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors } from '../theme';
+import { ReactCompareSlider } from 'react-compare-slider';
+import { colors, padding } from '../theme';
 import Image from 'next/image';
 import achievementsData from '../data/achievements.json';
 import Carousel from '../components/Carrousel';
@@ -124,6 +124,26 @@ const MainTitle = styled.h3`
   transition: opacity 0.3s ease;
 `;
 
+/* Ajout d'une section pour aligner le texte et la vidéo */
+const CompareSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: ${padding.horizontalPadding};
+  background-color: ${colors.secondary};
+`;
+
+const TextWrapper = styled.div`
+  width: 50%;
+  padding-right: 20px;
+`;
+
+const CompareSliderWrapper = styled.div`
+  width: 100%;
+  height: auto;
+`;
+
 export default function Portfolio() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
@@ -131,8 +151,8 @@ export default function Portfolio() {
     setSelectedVideo(url);
   };
 
-  const handleMainImageClick = () => {
-    setSelectedVideo(achievementsData.achievements[0].url);
+  const handleMainImageClick = (url: string) => {
+    setSelectedVideo(url);
   };
 
   const handleCloseModal = () => {
@@ -143,7 +163,7 @@ export default function Portfolio() {
     <PortfolioContainer>
       <AchievementsList>
         <Spacer />
-        <MainImageContainer onClick={handleMainImageClick}>
+        <MainImageContainer onClick={() => handleMainImageClick(achievementsData.achievements[0].url)}>
           <MainImage>
             <Image 
               src={achievementsData.achievements[0].imageSrc}
@@ -171,11 +191,42 @@ export default function Portfolio() {
             </ThumbnailCard>
           ))}
         </ThumbnailContainer>
+
+        {/* Section pour le titre et le comparateur vidéo */}
+        <CompareSection>
+          <TextWrapper>
+            <h2>Comparaison Vidéo</h2>
+            <p>Voici une comparaison entre deux versions de la vidéo avant et après les modifications. Faites glisser la barre pour voir les différences.</p>
+          </TextWrapper>
+          <CompareSliderWrapper>
+            <ReactCompareSlider
+              itemOne={
+                <video
+                  src="/before.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  style={{ width: '100%', height: '100%' }}
+                />
+              }
+              itemTwo={
+                <video
+                  src="/after.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  style={{ width: '100%', height: '100%' }}
+                />
+              }
+            />
+          </CompareSliderWrapper>
+        </CompareSection>
+
       </AchievementsList>
 
       {/* Affiche le modal de vidéo si une vidéo est sélectionnée */}
       {selectedVideo && (
-        <Carousel onClose={handleCloseModal} />
+        <Carousel onClose={handleCloseModal} selectedVideo={selectedVideo} />
       )}
     </PortfolioContainer>
   );

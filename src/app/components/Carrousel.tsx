@@ -1,11 +1,10 @@
 // src/components/Carousel.tsx
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
-import Image from 'next/image';
-import achievementsData from '../data/achievements.json';
 
 interface CarouselProps {
+  selectedVideo: string;
   onClose: () => void;
 }
 
@@ -59,27 +58,18 @@ const getYouTubeEmbedURL = (url: string) => {
   return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 };
 
-const Carousel: React.FC<CarouselProps> = ({ onClose }) => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? achievementsData.achievements.length - 1 : prevIndex - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === achievementsData.achievements.length - 1 ? 0 : prevIndex + 1));
-  };
+const Carousel: React.FC<CarouselProps> = ({ selectedVideo, onClose }) => {
+  // Extract videoId from selectedVideo URL
+  const embedURL = getYouTubeEmbedURL(selectedVideo);
 
   return (
     <VideoModal>
       <CloseButton onClick={onClose}>X</CloseButton>
-      <ArrowButton left onClick={handlePrev}>‹</ArrowButton>
       <VideoIframe
-        src={getYouTubeEmbedURL(achievementsData.achievements[currentIndex].url)}
+        src={embedURL}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
-      <ArrowButton onClick={handleNext}>›</ArrowButton>
     </VideoModal>
   );
 };
