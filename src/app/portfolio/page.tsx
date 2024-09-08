@@ -28,7 +28,7 @@ const MainImageContainer = styled.div`
   height: 500px;
   position: relative;
   overflow: hidden;
-  
+
   &:hover .main-overlay {
     opacity: 1;
   }
@@ -43,7 +43,8 @@ const MainImageContainer = styled.div`
 const MainImage = styled.div`
   width: 100%;
   height: 100%;
-
+  position: relative;
+  
   img {
     width: 100%;
     height: 100%;
@@ -55,6 +56,7 @@ const MainImage = styled.div`
 const ThumbnailContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 `;
 
 const ThumbnailCard = styled.div`
@@ -165,8 +167,8 @@ export default function Portfolio() {
             <Image 
               src={achievementsData.achievements[0].imageSrc}
               alt={achievementsData.achievements[0].title}
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: 'cover' }}
               quality={100}
             />
           </MainImage>
@@ -180,7 +182,6 @@ export default function Portfolio() {
               <ThumbnailImage
                 src={achievement.imageSrc}
                 alt={achievement.title}
-                layout="responsive"
                 width={1000}
                 height={600}
               />
