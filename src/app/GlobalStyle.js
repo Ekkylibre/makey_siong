@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    /* font-family: Arial, sans-serif; */
+    font-family: 'Cormorant Garamond', serif;
   }
 
   // Ajoute d'autres styles globaux ici si nécessaire

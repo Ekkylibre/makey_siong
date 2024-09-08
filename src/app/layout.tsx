@@ -27,6 +27,7 @@ export default function RootLayout({
           href="/mk_vision.png"
           type="image/png"
         />
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet"></link>
       </head>
       <body>
         <GlobalStyle />

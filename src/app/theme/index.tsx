@@ -7,7 +7,7 @@ export const colors = {
 
 
 export const fonts = {
-  primary: "",
+  primary: "'Cormorant Garamond', serif",
   secondary: "'Poppins', sans-serif",
 };
 
