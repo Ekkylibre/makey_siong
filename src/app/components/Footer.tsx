@@ -38,6 +38,7 @@ const FooterLinks = styled.div`
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+  cursor: pointer;
 `;
 
 const FooterLink = styled.a`
