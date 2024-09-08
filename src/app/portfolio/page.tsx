@@ -1,7 +1,7 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors, padding } from '../theme';
+import { colors } from '../theme';
 import Image from 'next/image'; // Importation du composant Image
 import achievementsData from '../data/achievements.json';
 
@@ -35,6 +35,8 @@ const MainImageContainer = styled.div`
   &:hover .main-title {
     opacity: 1;
   }
+
+  cursor: pointer; /* Ajoute un curseur pointer pour indiquer que c'est cliquable */
 `;
 
 const MainImage = styled.div`
@@ -69,6 +71,8 @@ const ThumbnailCard = styled.div`
   &:hover .thumbnail-title {
     opacity: 1;
   }
+
+  cursor: pointer; /* Ajoute un curseur pointer pour indiquer que c'est cliquable */
 `;
 
 const ThumbnailImage = styled(Image)`
@@ -121,12 +125,63 @@ const MainTitle = styled.h3`
   transition: opacity 0.3s ease;
 `;
 
+// Style pour le modal de la vidéo
+const VideoModal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+`;
+
+const VideoIframe = styled.iframe`
+  width: 80%;
+  height: 80%;
+  border: none;
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: ${colors.primary};
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+`;
+
+const getYouTubeEmbedURL = (url: string) => {
+  const videoId = new URL(url).searchParams.get('v');
+  return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+};
+
 export default function Portfolio() {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+
+  const handleThumbnailClick = (url: string) => {
+    setSelectedVideo(getYouTubeEmbedURL(url));
+  };
+
+  const handleMainImageClick = () => {
+    setSelectedVideo(getYouTubeEmbedURL(achievementsData.achievements[0].url));
+  };
+
+  const handleCloseModal = () => {
+    setSelectedVideo(null);
+  };
+
   return (
     <PortfolioContainer>
       <AchievementsList>
         <Spacer /> {/* Espace coloré en haut */}
-        <MainImageContainer>
+        <MainImageContainer onClick={handleMainImageClick}>
           <MainImage>
             <Image 
               src={achievementsData.achievements[0].imageSrc}
@@ -141,7 +196,7 @@ export default function Portfolio() {
         <Spacer /> {/* Espace coloré en bas */}
         <ThumbnailContainer>
           {achievementsData.achievements.slice(1).map((achievement) => (
-            <ThumbnailCard key={achievement.id}>
+            <ThumbnailCard key={achievement.id} onClick={() => handleThumbnailClick(achievement.url)}>
               <ThumbnailImage
                 src={achievement.imageSrc}
                 alt={achievement.title}
@@ -155,6 +210,18 @@ export default function Portfolio() {
           ))}
         </ThumbnailContainer>
       </AchievementsList>
+
+      {/* Affiche le modal de vidéo si une vidéo est sélectionnée */}
+      {selectedVideo && (
+        <VideoModal>
+          <CloseButton onClick={handleCloseModal}>X</CloseButton>
+          <VideoIframe
+            src={selectedVideo}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </VideoModal>
+      )}
     </PortfolioContainer>
   );
 }
