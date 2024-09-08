@@ -56,7 +56,6 @@ const MainImage = styled.div`
 const ThumbnailContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
 `;
 
 const ThumbnailCard = styled.div`
