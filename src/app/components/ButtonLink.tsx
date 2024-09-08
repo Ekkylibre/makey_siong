@@ -1,10 +1,9 @@
-// ButtonLink.tsx
 import React from 'react';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 
-const StyledButtonLink = styled.a<{ bgColor: string }>`
-  background-color: ${({ bgColor }) => bgColor};
+// Style pour le composant NextLink avec gestion de la couleur de fond
+const StyledNextLink = styled(NextLink)`
   color: white;
   border: 1px solid white;
   padding: 0.5rem 1rem;
@@ -24,27 +23,16 @@ const StyledButtonLink = styled.a<{ bgColor: string }>`
 type ButtonLinkProps = {
   href: string;
   children: React.ReactNode;
-  bgColor?: string; // Nouvelle prop pour la couleur de fond
+  bgColor?: string;
   target?: string;
   rel?: string;
 };
 
-const ButtonLink: React.FC<ButtonLinkProps> = ({ href, children, bgColor = 'blue', target = '_self', rel = 'noopener noreferrer' }) => {
-  // Vérifie si le lien est interne ou externe
-  const isInternalLink = href.startsWith('/');
-
-  if (isInternalLink) {
-    return (
-      <NextLink href={href} passHref legacyBehavior>
-        <StyledButtonLink bgColor={bgColor}>{children}</StyledButtonLink>
-      </NextLink>
-    );
-  }
-
+const ButtonLink: React.FC<ButtonLinkProps> = ({ href, children}) => {
   return (
-    <StyledButtonLink href={href} target={target} rel={rel} bgColor={bgColor}>
+    <StyledNextLink href={href}>
       {children}
-    </StyledButtonLink>
+    </StyledNextLink>
   );
 };
 

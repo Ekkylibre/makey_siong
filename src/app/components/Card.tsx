@@ -54,26 +54,32 @@ const Description = styled.p`
   margin: 0;
 `;
 
-// Mise à jour du type CardProps pour inclure l'URL
+// Style pour la div englobante du bouton
+const ButtonContainer = styled.div`
+  background-color: ${colors.tertiary};
+`;
+
 type CardProps = {
   imageSrc: string;
   title: string;
   description: string;
-  url: string; // Ajout de la prop url
+  url: string;
+  buttonBgColor?: string; // Ajout de la prop buttonBgColor
 };
 
-const Card: React.FC<CardProps> = ({ imageSrc, title, description, url }) => {
+const Card: React.FC<CardProps> = ({ imageSrc, title, description, url}) => {
   return (
     <CardContainer>
       <CardImage src={imageSrc} alt={title} />
       <CardContent>
         <CardTitle>{title}</CardTitle>
         <Description>{description}</Description>
-        <ButtonLink
-            href="/"
-            bgColor={colors.tertiary}>
+        <ButtonContainer>
+          <ButtonLink
+            href={url}>
             En savoir plus
           </ButtonLink>
+        </ButtonContainer>
       </CardContent>
     </CardContainer>
   );
