@@ -49,21 +49,21 @@ const CloseButton = styled.button`
 
 const ArrowButton = styled.button<{ left?: boolean }>`
   position: absolute;
-  ${props => props.left ? 'left: 20px;' : 'right: 20px;'}
+  ${props => props.left ? 'left: 50px;' : 'right: 50px;'}
   background: transparent;
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 30px;
-  padding: 10px;
+  font-size: 100px; /* Taille des chevrons */
+  padding: 15px; /* Ajuste le padding pour plus de confort */
   border-radius: 50%;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease; /* Ajoute une transition fluide */
 
   &:hover {
-    background: rgba(255, 255, 255, 0.2); // Effet de survol léger
-    color: ${colors.primary}; // Change la couleur de l'icône au survol
+    transform: scale(1.1); /* Agrandit les chevrons au survol */
   }
 `;
+
 
 const getYouTubeEmbedURL = (url: string) => {
   const videoId = new URL(url).searchParams.get('v');
@@ -89,8 +89,8 @@ const Carousel: React.FC<CarouselProps> = ({ selectedVideo, onClose }) => {
   return (
     <VideoModal>
       <CloseButton onClick={onClose}>X</CloseButton>
-      <ArrowButton left onClick={handlePrev}>◀</ArrowButton>
-      <ArrowButton onClick={handleNext}>▶</ArrowButton>
+      <ArrowButton left onClick={handlePrev}>‹</ArrowButton>
+      <ArrowButton onClick={handleNext}>›</ArrowButton>
       <VideoIframe
         src={embedURL}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
