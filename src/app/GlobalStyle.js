@@ -1,5 +1,6 @@
 "use client";
 import { createGlobalStyle } from 'styled-components';
+import { fonts } from './theme';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -14,7 +15,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: ${fonts.primary};
+    font-weight: 700;
   }
 
   // Ajoute d'autres styles globaux ici si nécessaire

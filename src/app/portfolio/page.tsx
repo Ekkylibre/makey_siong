@@ -130,15 +130,19 @@ const CompareSection = styled.div`
   color: white;
   padding: ${padding.horizontalPadding};
   background-color: ${colors.secondary};
+  gap: 20px;
 `;
 
 const TextWrapper = styled.div`
   width: 50%;
   padding-right: 20px;
-  font-family: ${fonts.secondary};
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  h1 {
+    font-family: ${fonts.secondary};
+  }
 `;
 
 const CompareSliderWrapper = styled.div`
@@ -197,7 +201,7 @@ export default function Portfolio() {
         {/* Section pour le titre et le comparateur vidéo */}
         <CompareSection>
           <TextWrapper>
-            <h2>Comparaison Vidéo</h2>
+            <h1>Comparaison Vidéo</h1>
             <p>Voici une comparaison entre deux versions de la vidéo avant et après les modifications. Faites glisser la barre pour voir les différences.</p>
           </TextWrapper>
           <CompareSliderWrapper>

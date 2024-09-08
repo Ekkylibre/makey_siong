@@ -71,6 +71,7 @@ const TextColumn = styled.div`
     overflow: hidden;
     transform: translateX(-60%);
     letter-spacing: 0.1em; /* Ajuste l'espacement entre les lettres */
+    font-family: ${fonts.secondary};
 
     span {
       display: block;
@@ -79,8 +80,6 @@ const TextColumn = styled.div`
   }
 
   p {
-    font-size: 1.2rem;
-    font-family: ${fonts.secondary};
     animation: ${slideUp} 1s ease forwards;
     padding-bottom: 50px;
   }

@@ -1,7 +1,7 @@
 "use client";
 import styled from 'styled-components';
-import Card from './components/Card';
 import { colors, fonts, padding } from './theme';
+import Card from './components/Card';
 import services from './data/services.json';
 
 // Style pour le fond et la vidéo
@@ -25,17 +25,18 @@ const StyledBackground = styled.div`
     z-index: -1;
   }
 
-  h1, h2 {
+  h1 {
     color: white;
     z-index: 1;
+    font-family: ${fonts.secondary};  // Ajoutez la police pour h1
   }
 
   h2 {
     margin-top: 0.5em;
+    font-family: ${fonts.primary};  // Ajoutez la police pour h2
   }
 
   p {
-    font-family: ${fonts.secondary};
     color: white;
     z-index: 1;
     margin-top: 0.5em;
@@ -56,6 +57,12 @@ const ServicesSection = styled.section`
   h1 {
     margin: 0;
     font-size: 2em;
+    font-family: ${fonts.primary};  // Assurez-vous que la police de h1 est définie ici aussi
+  }
+
+  h2 {
+    margin-top: 0.5em;
+    font-family: ${fonts.secondary};  // Assurez-vous que la police de h2 est définie ici aussi
   }
 
   .cards-container {

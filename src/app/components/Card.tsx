@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ButtonLink from './ButtonLink';
-import { colors } from '../theme';
+import { colors, fonts } from '../theme';
 
 // Style pour la carte avec effet de zoom au survol
 const CardContainer = styled.div`
@@ -38,7 +38,8 @@ const CardContent = styled.div`
 
 // Style pour le titre
 const CardTitle = styled.h3`
-  margin-bottom: 24px;
+  font-family: ${fonts.secondary};
+  font-size: 24px;
 `;
 
 // Style pour la description
@@ -46,12 +47,9 @@ const Description = styled.p`
   flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-height: 1.5em;
-  max-height: 4.5em;
-  margin: 0;
+  font-family: ${fonts.primary};
+  display: flex;
+  align-items: center;
 `;
 
 // Style pour la div englobante du bouton

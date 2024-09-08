@@ -27,6 +27,7 @@ const Banner = styled.div`
 const BannerTitle = styled.h1`
   font-size: 2.5em; /* Ajuste la taille de la police selon tes besoins */
   margin-top: 2em;
+  font-family: ${fonts.secondary};
 `;
 
 const BannerSubtitle = styled.a`
@@ -67,6 +68,7 @@ const SectionHeader = styled.h2`
   font-size: 2em; /* Ajuste la taille de la police selon tes besoins */
   color: white;
   margin-bottom: 1em;
+  font-family: ${fonts.secondary};
 `;
 
 export default function Contact() {
@@ -78,7 +80,7 @@ export default function Contact() {
       </Banner>
       <FormSection id="contact-moi">
         <FormContainer>
-          <SectionHeader>CONTACTE-MOI</SectionHeader>
+          <SectionHeader>CONTACTE - MOI</SectionHeader>
           <ContactForm />
         </FormContainer>
         <ImageContainer>

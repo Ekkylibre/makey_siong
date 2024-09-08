@@ -1,3 +1,5 @@
+import '@fontsource/poppins/100.css';
+
 export const colors = {
   primary: "black",
   secondary: "#0b0b0b",
@@ -7,8 +9,8 @@ export const colors = {
 
 
 export const fonts = {
-  primary: "'Cormorant Garamond', serif",
-  secondary: "'Poppins', sans-serif",
+  primary: "'Poppins', sans-serif",
+  secondary: "'Cormorant Garamond', serif",
 };
 
 export const padding = {
