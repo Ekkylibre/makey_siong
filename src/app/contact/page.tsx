@@ -34,7 +34,6 @@ const BannerSubtitle = styled.a`
   margin: 0.5em 0 0;
   color: #f0f0f0;
   text-decoration: none;
-  font-family: ${fonts.secondary};
   &:hover {
     text-decoration: underline;
   }
