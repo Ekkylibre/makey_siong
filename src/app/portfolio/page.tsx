@@ -43,9 +43,6 @@ const MainImageContainer = styled.div`
 const MainImage = styled.div`
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 
   img {
     width: 100%;
@@ -170,6 +167,7 @@ export default function Portfolio() {
               alt={achievementsData.achievements[0].title}
               layout="fill"
               objectFit="cover"
+              quality={100}
             />
           </MainImage>
           <MainOverlay className="main-overlay" />
