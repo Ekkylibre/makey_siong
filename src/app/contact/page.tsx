@@ -53,6 +53,8 @@ const FormSection = styled.section`
 
 const FormContainer = styled.div`
   flex: 1;
+  position: relative; /* Pour que le z-index fonctionne */
+  z-index: 10;
 `;
 
 const ImageContainer = styled.div`
@@ -62,6 +64,8 @@ const ImageContainer = styled.div`
   align-items: center;
   position: relative;
   height: 100%; /* Assure-toi que le conteneur a une hauteur définie */
+  position: relative;
+  z-index: 1;
 `;
 
 const SectionHeader = styled.h2`
