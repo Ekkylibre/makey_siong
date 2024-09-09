@@ -36,7 +36,7 @@ const BackgroundContainer = styled.div`
   flex-direction: column;
 `;
 
-const ContentContainer = styled.div`
+const ContentContainer = styled.section`
   display: flex;
   padding-top: 100px;
   gap: 100px;
