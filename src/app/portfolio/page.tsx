@@ -123,7 +123,7 @@ const MainTitle = styled.h3`
 `;
 
 /* Ajout d'une section pour aligner le texte et la vidéo */
-const CompareSection = styled.div`
+const CompareSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
